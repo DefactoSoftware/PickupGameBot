@@ -1,0 +1,12 @@
+<h1>Games</h1>
+
+<% @games.each do |game| %>
+  <hr>
+  <h2><%= link_to(game.name, game.uuid) %></h2>
+  <ul>
+    <li>Start Time: <%= game.start_time %></li>
+    <li>Required Players: <%= game.required_players %></li>
+    <li>Game Type: <%= game.game %></li>
+    <li>UUID: <%= game.uuid %></li>
+  </ul>
+<% end %>

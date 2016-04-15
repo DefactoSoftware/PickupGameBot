@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root "static_pages#home"
 
-  resource :games
+  resources :games, only: [:show, :index]
 end

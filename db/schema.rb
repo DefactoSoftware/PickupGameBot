@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415085306) do
+ActiveRecord::Schema.define(version: 20160415135322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+  enable_extension "uuid-ossp"
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -41,8 +42,9 @@ ActiveRecord::Schema.define(version: 20160415085306) do
     t.integer  "required_players"
     t.float    "longitude"
     t.float    "latitude"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.uuid     "uuid",             default: "uuid_generate_v4()"
   end
 
 end
