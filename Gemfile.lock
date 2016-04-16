@@ -125,6 +125,7 @@ GEM
     json (1.8.3)
     launchy (2.4.3)
       addressable (~> 2.3)
+    leaflet-rails (0.7.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -289,6 +290,7 @@ DEPENDENCIES
   high_voltage
   jquery-rails
   launchy
+  leaflet-rails
   neat (~> 1.7.0)
   newrelic_rpm (>= 3.9.8)
   normalize-rails (~> 3.0.0)

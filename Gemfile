@@ -22,7 +22,8 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "title"
 gem "uglifier"
-gem 'telegram-bot-ruby'
+gem "telegram-bot-ruby"
+gem "leaflet-rails"
 
 group :development do
   gem "quiet_assets"
