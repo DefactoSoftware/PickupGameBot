@@ -4,5 +4,26 @@
   <li>Start Time: <%= @game.start_time %></li>
   <li>Required Players: <%= @game.required_players %></li>
   <li>Game Type: <%= @game.game %></li>
-  <li>UUID: <%= @game.uuid %></li>
 </ul>
+
+<br>
+
+<% if @game.longitude && @game.latitude %>
+
+  <div id="game-location"></div>
+  <script>
+    var loc = [<%= @game.longitude %>, <%= @game.latitude %>];
+    var map = L.map('game-location', {
+      center: loc,
+      zoom: 18,
+      scrollWheelZoom: false
+    });
+
+    L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+      subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
+    }).addTo(map);
+
+    var marker = L.marker(loc).addTo(map);
+  </script>
+
+<% end %>
