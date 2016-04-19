@@ -32,9 +32,12 @@ feature "creating games" do
   end
 
   context "no game currently exists" do
-    scenario "user creates game" do
+    before :each do
       @user = Telegram::Bot::Types::User.new(user_params)
       @chat = Telegram::Bot::Types::Chat.new(chat_params)
+    end
+
+    scenario "user creates game" do
       message = Telegram::Bot::Types::Message.new(message_params('/create_game'))
 
       pickup_bot.run(message)
@@ -47,6 +50,24 @@ feature "creating games" do
                 "chat_id" => "123",
                 "text" => "Game has been created, @chet_faker" }
             )).to have_been_made.times(1)
+    end
+
+    scenario "user creates game with 8 required players" do
+      message = Telegram::Bot::Types::Message.new(message_params('/create_game 8'))
+
+      pickup_bot.run(message)
+
+      expect(Game.count).to eq(1)
+      expect(Game.last.required_players).to eq(8)
+    end
+
+    scenario "user creates game with 8 required players" do
+      message = Telegram::Bot::Types::Message.new(message_params('/create_game 8'))
+
+      pickup_bot.run(message)
+
+      expect(Game.count).to eq(1)
+      expect(Game.last.required_players).to eq(8)
     end
   end
 

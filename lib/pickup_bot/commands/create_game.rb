@@ -16,9 +16,11 @@ module Commands
           text: I18n.t('bot.commands.create_game.game_exists', username: username)
         )
       else
+        required_players = message.text.split(" ").second.to_i
         game = Game.new(
           chat_id: @message.chat.id,
-          name: game_name
+          name: game_name,
+          required_players: required_players
           )
         game.save
 
