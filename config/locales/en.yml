@@ -22,3 +22,5 @@ en:
       create_game:
         game_created: "Game has been created, @%{username}"
         game_exists: "An active game already exists, @%{username}"
+      help:
+        whatever: "Whatever, @%{username}"
