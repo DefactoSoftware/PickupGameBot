@@ -35,7 +35,9 @@ feature "user creates a game" do
       pickup_bot.run(message)
 
       expect(Game.count).to eq(1)
-      expect(Game.last.chat_id).to eq(fake-chat-id)
+      expect(Game.last.chat_id).to eq(fake_chat_id)
+      expect(Game.last.name).to eq("Tuesday Futsal's game")
+      expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage")).to have_been_made.times(1)
     end
   end
 end
@@ -43,7 +45,7 @@ end
 private
 
 def chat_params
-  { id: 'fake-chat-id', first_name: "Chet", last_name: "Faker", title: nil, type: "group", username: "chet_faker" }
+  { id: fake_chat_id, first_name: "Chet", last_name: "Faker", title: "Tuesday Futsal", type: "group", username: "chet_faker" }
 end
 
 def message_params(text)
@@ -51,6 +53,14 @@ def message_params(text)
 end
 
 def user_params
-  { first_name: "Chet", last_name: "Faker", username: "chet_faker", id: 'fake-user-id' }
+  { first_name: "Chet", last_name: "Faker", username: "chet_faker", id: fake_user_id }
+end
+
+def fake_chat_id
+  123
+end
+
+def fake_user_id
+  789
 end
 

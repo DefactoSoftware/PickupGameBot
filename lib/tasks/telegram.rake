@@ -1,5 +1,5 @@
 namespace :telegram do
-  task :run do
+  task run: [:environment] do
     require 'pickup_bot'
     require 'telegram/bot'
 
