@@ -36,7 +36,7 @@ module Commands
     attr_reader :telegram_bot, :message
 
     def game_exists?
-      return true if Game.find_by_chat_id(@message.chat.id)
+      Game.exists?(chat_id: @message.chat.id)
     end
 
     def game_name

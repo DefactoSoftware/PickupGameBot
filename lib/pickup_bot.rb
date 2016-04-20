@@ -11,6 +11,8 @@ class PickupBot
       PickupBot::Commands::Help.run(telegram_bot, message)
     when /create_game/
       PickupBot::Commands::CreateGame.run(telegram_bot, message)
+    when /join/
+      PickupBot::Commands::Join.run(telegram_bot, message)
     end
   end
 end
