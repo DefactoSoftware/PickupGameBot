@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419150956) do
+ActiveRecord::Schema.define(version: 20160420052649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20160419150956) do
     t.integer  "chat_id"
     t.datetime "start_time"
     t.string   "game"
-    t.integer  "required_players"
+    t.integer  "required_players", default: 0
     t.float    "longitude"
     t.float    "latitude"
     t.datetime "created_at",                                      null: false
