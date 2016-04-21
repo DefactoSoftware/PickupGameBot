@@ -36,13 +36,10 @@ feature "checking a game's status" do
     scenario "user tries to assess the game's status" do
       message = Telegram::Bot::Types::Message.new(message_params("/status"))
       game = Game.create(chat_id: fake_chat_id, required_players: 5)
+      default_url_options[:host] = ENV['APPLICATION_HOST']
       game.reload # to pull the UUID
-      game_url = url_for(game)
 
-      pp game_url # this outputs www.example.com/path/to/game,
-                  # but in the app we get /path/to/game
       pickup_bot.run(message)
-
 
       expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
               with(body: {
@@ -50,7 +47,7 @@ feature "checking a game's status" do
                 "parse_mode" => "Markdown",
                 "text" => I18n.t(
                   "bot.commands.status.game_status",
-                  game_url: game_url, # this test fails on the interpolated game_url.
+                  game_url: game_url(game),
                   players: "0 / 5"
                 )
               }

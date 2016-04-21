@@ -29,5 +29,5 @@ en:
         joined: "@%{username} joined the game. There are now %{players} players."
       status:
         no_game: "There's no active game, @%{username}"
-        game_status: "There's [a game](%{game_url}) with __%{players} players__. Type /join to __join__."
+        game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
 

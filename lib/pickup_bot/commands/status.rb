@@ -17,18 +17,18 @@ module Commands
       if game_exists?
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          parse_mode: "Markdown",
+          parse_mode: "markdown",
           text: I18n.t(
-            "bot.commands.status.game_status",
-            players: players,
-            game_url: url_for(current_game),
-          )
+                  "bot.commands.status.game_status",
+                  players: players,
+                  game_url: game_url(current_game),
+                )
         )
       else
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
           text: I18n.t("bot.commands.status.no_game", username: username),
-          parse_mode: "Markdown"
+          parse_mode: "markdown"
         )
       end
     end
@@ -55,10 +55,6 @@ module Commands
 
     def username
       message.from.username || message.from.first_name
-    end
-
-    def game_url
-      #
     end
   end
 end
