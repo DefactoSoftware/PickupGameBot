@@ -40,7 +40,7 @@ module Commands
     end
 
     def game_name
-      "#{@message.chat.title}'s game"
+      "#{@message.chat.title}'s game" || "#{username}'s game"
     end
 
     def username
