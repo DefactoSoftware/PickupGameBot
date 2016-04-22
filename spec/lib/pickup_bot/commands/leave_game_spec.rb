@@ -8,6 +8,7 @@ feature "leaving a game" do
   let(:telegram_user) { Telegram::Bot::Types::User.new(user_params) }
   let(:telegram_chat) { Telegram::Bot::Types::Chat.new(chat_params) }
   let(:existing_game) { Game.new(chat_id: fake_chat_id) }
+  let(:message) { Telegram::Bot::Types::Message.new(message_params("/leave")) }
 
   before :each do
     stub_request(:any, /api.telegram.org/).to_return(status: 200, body:"[]", :headers => {})
@@ -15,8 +16,6 @@ feature "leaving a game" do
 
   context "no game currently exists" do
     scenario "user tries to leave the non-existant game" do
-      message = Telegram::Bot::Types::Message.new(message_params('/leave'))
-
       pickup_bot.run(message)
 
       expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
@@ -33,7 +32,6 @@ feature "leaving a game" do
 
   context "an active game exists" do
     scenario "user tries to leave a game he's not attending" do
-      message = Telegram::Bot::Types::Message.new(message_params("/leave"))
       game = Game.create(chat_id: fake_chat_id, required_players: 5)
 
       pickup_bot.run(message)
@@ -50,7 +48,6 @@ feature "leaving a game" do
     end
 
     scenario "user leaves game he was previously attending" do
-      message = Telegram::Bot::Types::Message.new(message_params("/leave"))
       game = Game.create(chat_id: fake_chat_id, required_players: 5)
       player = Player.find_by(telegram_user_id: message.from.id)
       Attendance.create(game: game, player: player)
