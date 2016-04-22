@@ -4,6 +4,7 @@ class Game < ActiveRecord::Base
   has_many :players, through: :attendances
 
   boolean_date_time_field :archived_at, as: :archived
+  scope :active, -> { where archived_at: nil }
 
   def to_param
     uuid

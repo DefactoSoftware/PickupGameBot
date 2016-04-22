@@ -45,11 +45,11 @@ module Commands
     end
 
     def game_exists?
-      Game.exists?(chat_id: @message.chat.id)
+      Game.active.exists?(chat_id: @message.chat.id)
     end
 
     def current_game
-      Game.find_by_chat_id(@message.chat.id)
+      Game.active.find_by_chat_id(@message.chat.id)
     end
 
     def current_attendance
