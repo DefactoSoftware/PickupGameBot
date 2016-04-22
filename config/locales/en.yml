@@ -27,7 +27,11 @@ en:
       join:
         no_game: "There's no active game, @%{username}"
         joined: "@%{username} joined the game. There are now %{players} players."
+      leave:
+        no_game: "There's no active game, @%{username}"
+        not_attending: "You're not attending the current game, @%{username}"
       status:
         no_game: "There's no active game, @%{username}"
         game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
+        left: "@%{username} left the game. There are now *%{players}* players."
 
