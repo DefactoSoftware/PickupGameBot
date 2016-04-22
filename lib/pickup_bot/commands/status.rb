@@ -27,7 +27,7 @@ module Commands
       else
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t("bot.commands.status.no_game", username: username),
+          text: I18n.t("bot.no_game", username: username),
           parse_mode: "markdown"
         )
       end

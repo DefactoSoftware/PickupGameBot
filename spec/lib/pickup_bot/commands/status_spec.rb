@@ -24,7 +24,7 @@ feature "checking a game's status" do
                 "chat_id" => "123",
                 "parse_mode" => "Markdown",
                 "text" => I18n.t(
-                  "bot.commands.status.no_game",
+                  "bot.no_game",
                   username: user_params[:username]
                 )
               }

@@ -24,7 +24,7 @@ feature "joining a game" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  "bot.commands.join.no_game",
+                  "bot.no_game",
                   username: user_params[:username]
                 )
               }
