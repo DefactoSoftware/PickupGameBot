@@ -2,63 +2,51 @@ require "spec_helper"
 require 'telegram/bot'
 require 'pickup_bot'
 
-feature "creating games" do
+feature "ending a game" do
   let(:bot) { Telegram::Bot::Client.new('fake-token') }
   let(:pickup_bot) { PickupBot.new(bot) }
   let(:telegram_user) { Telegram::Bot::Types::User.new(user_params) }
   let(:telegram_chat) { Telegram::Bot::Types::Chat.new(chat_params) }
+  let(:existing_game) { Game.new(chat_id: fake_chat_id) }
+  let(:message) { Telegram::Bot::Types::Message.new(message_params("/archive_game")) }
 
   before :each do
     stub_request(:any, /api.telegram.org/).to_return(status: 200, body:"[]", :headers => {})
   end
 
   context "no game currently exists" do
-    scenario "user creates game" do
-      message = Telegram::Bot::Types::Message.new(message_params('/create_game'))
-
+    scenario "user tries to archive the non-existent game" do
       pickup_bot.run(message)
 
-      expect(Game.count).to eq(1)
-      expect(Game.last.chat_id).to eq(fake_chat_id)
-      expect(Game.last.name).to include(chat_params[:title])
       expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.game_created',
+                  "bot.no_game",
                   username: user_params[:username]
                 )
               }
             )).to have_been_made.times(1)
-    end
-
-    scenario "user creates game with 8 required players" do
-      message = Telegram::Bot::Types::Message.new(message_params('/create_game 8'))
-
-      pickup_bot.run(message)
-
-      expect(Game.count).to eq(1)
-      expect(Game.last.required_players).to eq(8)
     end
   end
 
-  context "an active game already exists for this chat" do
-    scenario "bot tells user a previous game is active" do
-      message = Telegram::Bot::Types::Message.new(message_params('/create_game'))
-      game = Game.create(chat_id: fake_chat_id)
+  context "an active game exists" do
+    scenario "user archives the current game" do
+      game = Game.create(chat_id: fake_chat_id, required_players: 5)
 
       pickup_bot.run(message)
 
-      expect(Game.count).to eq(1)
       expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.game_exists',
+                  "bot.game_archived",
                   username: user_params[:username]
                 )
               }
             )).to have_been_made.times(1)
+
+      expect(Game.last).to have_attributes(archived: true)
     end
   end
 end
