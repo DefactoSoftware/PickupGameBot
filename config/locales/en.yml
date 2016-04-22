@@ -18,23 +18,16 @@ en:
   titles:
     application: Pickupgamebot
   bot:
+    whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
-    commands:
-      create_game:
-        game_created: "Game has been created, @%{username}"
-        game_exists: "An active game already exists, @%{username}"
-      archive_game:
-        game_archived: |
-          The current game has been archived.
-          Type /create_game to create a new game. You can specify the required
-          number of players: */create game 8*.
-      help:
-        whatever: "Whatever, @%{username}"
-      join:
-        joined: "@%{username} joined the game. There are now %{players} players."
-      leave:
-        not_attending: "You're not attending the current game, @%{username}"
-      status:
-        game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
-        left: "@%{username} left the game. There are now *%{players}* players."
+    game_created: "Game has been created, @%{username}"
+    game_exists: "An active game already exists, @%{username}"
+    game_archived: |
+      The current game has been archived.
+      Type /create_game to create a new game. You can specify the required
+      number of players: */create game 8*.
+    joined_game: "@%{username} joined the game. There are now %{players} players."
+    not_attending: "You're not attending the current game, @%{username}"
+    left_game: "@%{username} left the game. There are now *%{players}* players."
+    game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
 

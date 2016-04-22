@@ -19,7 +19,7 @@ module Commands
           chat_id: message.chat.id,
           parse_mode: "markdown",
           text: I18n.t(
-                  "bot.commands.status.game_status",
+                  "bot.game_status",
                   players: players,
                   game_url: game_url(current_game),
                 )

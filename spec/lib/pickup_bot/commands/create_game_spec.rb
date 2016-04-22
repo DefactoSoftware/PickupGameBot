@@ -25,7 +25,7 @@ feature "creating games" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.commands.create_game.game_created',
+                  'bot.game_created',
                   username: user_params[:username]
                 )
               }
@@ -63,7 +63,7 @@ feature "creating games" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.commands.create_game.game_exists',
+                  'bot.game_exists',
                   username: user_params[:username]
                 )
               }

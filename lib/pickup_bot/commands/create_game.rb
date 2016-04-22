@@ -13,7 +13,7 @@ module Commands
       if game_exists?
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t('bot.commands.create_game.game_exists', username: username)
+          text: I18n.t('bot.game_exists', username: username)
         )
       else
         required_players = message.text.split(" ").second.to_i
@@ -26,7 +26,7 @@ module Commands
 
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t('bot.commands.create_game.game_created', username: username)
+          text: I18n.t('bot.game_created', username: username)
         )
       end
     end

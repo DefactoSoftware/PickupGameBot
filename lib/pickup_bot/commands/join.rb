@@ -17,7 +17,7 @@ module Commands
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
           text: I18n.t(
-            "bot.commands.join.joined",
+            "bot.joined_game",
             username: username,
             players: players
           )

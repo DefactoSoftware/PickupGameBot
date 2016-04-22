@@ -22,7 +22,7 @@ feature "checking a game's status" do
       expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
               with(body: {
                 "chat_id" => "123",
-                "parse_mode" => "Markdown",
+                "parse_mode" => "markdown",
                 "text" => I18n.t(
                   "bot.no_game",
                   username: user_params[:username]
@@ -44,9 +44,9 @@ feature "checking a game's status" do
       expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
               with(body: {
                 "chat_id" => "123",
-                "parse_mode" => "Markdown",
+                "parse_mode" => "markdown",
                 "text" => I18n.t(
-                  "bot.commands.status.game_status",
+                  "bot.game_status",
                   game_url: game_url(game),
                   players: "0 / 5"
                 )

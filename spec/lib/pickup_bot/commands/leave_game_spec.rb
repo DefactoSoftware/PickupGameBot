@@ -40,7 +40,7 @@ feature "leaving a game" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  "bot.commands.leave.not_attending",
+                  "bot.not_attending",
                   username: user_params[:username]
                 )
               }
@@ -58,7 +58,7 @@ feature "leaving a game" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  "bot.commands.leave.left",
+                  "bot.left_game",
                   username: user_params[:username],
                   players: "0 / 5"
                 )

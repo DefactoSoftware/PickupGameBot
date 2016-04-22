@@ -22,7 +22,7 @@ module Commands
       if game_exists?
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t("bot.commands.leave.not_attending", username: username)
+          text: I18n.t("bot.not_attending", username: username)
         )
       else
         telegram_bot.api.send_message(
@@ -37,7 +37,7 @@ module Commands
 
       telegram_bot.api.send_message(
         chat_id: message.chat.id,
-        text: I18n.t("bot.commands.leave.left",
+        text: I18n.t("bot.left_game",
         username: username,
         players: players
         )
