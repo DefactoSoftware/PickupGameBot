@@ -19,7 +19,7 @@ module Commands
           chat_id: message.chat.id,
           parse_mode: "markdown",
           text: I18n.t(
-                  "bot.commands.status.game_status",
+                  "bot.game_status",
                   players: players,
                   game_url: game_url(current_game),
                 )
@@ -27,7 +27,7 @@ module Commands
       else
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t("bot.commands.status.no_game", username: username),
+          text: I18n.t("bot.no_game", username: username),
           parse_mode: "markdown"
         )
       end
@@ -38,11 +38,11 @@ module Commands
     attr_reader :telegram_bot, :message
 
     def game_exists?
-      Game.exists?(chat_id: @message.chat.id)
+      Game.active.exists?(chat_id: @message.chat.id)
     end
 
     def current_game
-      Game.find_by_chat_id(@message.chat.id)
+      Game.active.find_by_chat_id(@message.chat.id)
     end
 
     def players

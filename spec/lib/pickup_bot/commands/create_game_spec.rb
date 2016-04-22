@@ -25,20 +25,11 @@ feature "creating games" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.commands.create_game.game_created',
+                  'bot.game_created',
                   username: user_params[:username]
                 )
               }
             )).to have_been_made.times(1)
-    end
-
-    scenario "user creates game with 8 required players" do
-      message = Telegram::Bot::Types::Message.new(message_params('/create_game 8'))
-
-      pickup_bot.run(message)
-
-      expect(Game.count).to eq(1)
-      expect(Game.last.required_players).to eq(8)
     end
 
     scenario "user creates game with 8 required players" do
@@ -63,7 +54,7 @@ feature "creating games" do
               with(body: {
                 "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.commands.create_game.game_exists',
+                  'bot.game_exists',
                   username: user_params[:username]
                 )
               }

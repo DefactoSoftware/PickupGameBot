@@ -1,5 +1,5 @@
 module Commands
-  class CreateGame
+  class ArchiveGame
     def self.run(telegram_bot, message)
       new(telegram_bot, message).run
     end
@@ -11,22 +11,15 @@ module Commands
 
     def run
       if game_exists?
+        current_game.archive!
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t('bot.game_exists', username: username)
+          text: I18n.t('bot.game_archived', username: username)
         )
       else
-        required_players = message.text.split(" ").second.to_i
-        game = Game.new(
-          chat_id: @message.chat.id,
-          name: game_name,
-          required_players: required_players
-          )
-        game.save
-
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t('bot.game_created', username: username)
+          text: I18n.t('bot.no_game', username: username)
         )
       end
     end
@@ -39,8 +32,8 @@ module Commands
       Game.active.exists?(chat_id: @message.chat.id)
     end
 
-    def game_name
-      "#{@message.chat.title}'s game" || "#{username}'s game"
+    def current_game
+      Game.active.find_by_chat_id(@message.chat.id)
     end
 
     def username

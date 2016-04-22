@@ -18,7 +18,7 @@ feature "user needs help" do
             with(body: {
               "chat_id" => "123",
                 "text" => I18n.t(
-                  'bot.commands.help.whatever',
+                  'bot.whatever',
                   username: user_params[:username]
                 )
               })

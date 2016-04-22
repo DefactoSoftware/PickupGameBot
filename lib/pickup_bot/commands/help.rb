@@ -12,7 +12,7 @@ module Commands
     def run
       telegram_bot.api.send_message(
         chat_id: message.chat.id,
-        text: I18n.t('bot.commands.help.whatever', username: username)
+        text: I18n.t('bot.whatever', username: username)
       )
     end
 
