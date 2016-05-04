@@ -1,14 +1,29 @@
 <h1><%= @game.name %></h1>
 
 <dl class="cloud">
-  <dt>Start Time:</dt>
-  <dd>t<%= @game.start_time %></dd>
+  <% if @game.start_time && @game.start_time.to_date == Date.today %>
+    <dt>Start Time:</dt>
+    <dd><%= l @game.start_time, format: :short_time %></dd>
+  <% elsif @game.start_time %>
+    <dt>Starting at:</dt>
+    <dd><%= l @game.start_time, format: :short %>, <%= l @game.start_time, format: :short_time %></dd>
+  <% end %>
+
+  <% if @game.venue %>
+    <dt>Venue:</dt>
+    <dd><%= @game.venue %></dd>
+  <% end %>
 
   <dt>Players:</dt>
-  <dd><%= @game.attendances.count %> / <%= @game.required_players %></dd>
+  <dd>
+    <%= @game.attendances.count || 0 %>
+    <%= "/ #{@game.required_players}" if @game.required_players %>
+  </dd>
 
-  <dt>Game Type:</dt>
-  <dd><%= @game.game %></dd>
+  <% if @game.game %>
+    <dt>Game Type:</dt>
+    <dd><%= @game.game %></dd>
+  <% end %>
 </dl>
 
 <%= image_tag "bot.svg", alt: "Robot", class: "bot" -%>
