@@ -1,29 +1,14 @@
 <h1><%= @game.name %></h1>
 
-<ul>
-  <li>Start Time: <%= @game.start_time %></li>
-  <li>Required Players: <%= @game.required_players %></li>
-  <li>Game Type: <%= @game.game %></li>
-</ul>
+<dl class="cloud">
+  <dt>Start Time:</dt>
+  <dd>t<%= @game.start_time %></dd>
 
-<br>
+  <dt>Players:</dt>
+  <dd><%= @game.attendances.count %> / <%= @game.required_players %></dd>
 
-<% if @game.longitude && @game.latitude %>
+  <dt>Game Type:</dt>
+  <dd><%= @game.game %></dd>
+</dl>
 
-  <div id="game-location"></div>
-  <script>
-    var loc = [<%= @game.longitude %>, <%= @game.latitude %>];
-    var map = L.map('game-location', {
-      center: loc,
-      zoom: 18,
-      scrollWheelZoom: false
-    });
-
-    L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-      subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
-    }).addTo(map);
-
-    var marker = L.marker(loc).addTo(map);
-  </script>
-
-<% end %>
+<%= image_tag "bot.svg", alt: "Robot", class: "bot" -%>

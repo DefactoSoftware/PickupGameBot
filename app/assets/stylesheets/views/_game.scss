@@ -1,0 +1,54 @@
+body {
+  background: $yellow;
+  padding: 20px;
+  text-transform: uppercase;
+  color: $gray-darkest;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+$shadow-x: -5px;
+$shadow-y: 15px;
+
+.cloud {
+  background: $white;
+  box-shadow: $shadow-x $shadow-y 0 $gray-dark;
+  font-size: 1.2em;
+  margin-bottom: 20vw;
+  padding: 30px 20px;
+  position: relative;
+
+  &::before,
+  &::after {
+    mask: url('cloud-arrow.svg') no-repeat top;
+    mask-size: cover;
+    content: '';
+    display: block;
+    height: 30vw * 1.2827586207;
+    max-height: 186px;
+    max-width: 145px;
+    left: 60%;
+    position: absolute;
+    top: calc(100% - 1px);
+    width: 30vw;
+  }
+
+  &::before {
+    background-color: $gray-dark;
+    margin: #{$shadow-y} 0 0 #{$shadow-x};
+  }
+
+  &::after {
+    background-color: $white;
+  }
+}
+
+.bot {
+  float: right;
+  margin-right: 35%;
+  max-width: 400px * .65;
+  width: 65%;
+}

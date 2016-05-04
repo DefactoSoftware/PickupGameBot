@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;fill:#FEE110;}
+	.st1{fill:#FEE110;}
+	.st2{fill:#BDC9C0;}
+	.st3{fill:#2B2D2D;}
+	.st4{fill:#2980BA;}
+	.st5{fill:#464748;}
+	.st6{fill:#9DA29E;}
+</style>
+<rect id="background_square" class="st0" width="200" height="200"/>
+<circle id="background_round" class="st1" cx="100" cy="100" r="100"/>
+<g id="bot">
+	<rect id="head" x="49.5" y="77.4" class="st2" width="100.9" height="85.4"/>
+	<g id="headphones">
+		<g id="antenna">
+			<rect id="antenna_1_" x="33.6" y="51.6" class="st3" width="3.1" height="62.7"/>
+			<circle id="cap_3_" class="st4" cx="35.1" cy="51.6" r="4.3"/>
+		</g>
+		<g id="left">
+			<rect id="cushion_1_" x="42.7" y="92.4" class="st3" width="6.8" height="43.9"/>
+			<polygon id="cap_2_" class="st5" points="33.5,109 42.7,102.8 42.7,126 33.5,119.7 			"/>
+		</g>
+		<g id="right">
+			<rect id="cushion" x="150.5" y="92.4" class="st3" width="6.8" height="43.9"/>
+			<polygon id="cap_1_" class="st5" points="166.5,109 157.3,102.8 157.3,126 166.5,119.7 			"/>
+		</g>
+	</g>
+	<g id="eyes">
+		<path id="right_1_" class="st3" d="M121.3,97.7c5.1,0,9.2,4.1,9.2,9.2h6.3c0-8.6-6.9-15.5-15.5-15.5c-8.6,0-15.5,6.9-15.5,15.5
+			h6.3C112.1,101.8,116.2,97.7,121.3,97.7z"/>
+		<path id="left_1_" class="st3" d="M78.7,97.7c5.1,0,9.2,4.1,9.2,9.2h6.3c0-8.6-6.9-15.5-15.5-15.5c-8.6,0-15.5,6.9-15.5,15.5h6.3
+			C69.5,101.8,73.6,97.7,78.7,97.7z"/>
+	</g>
+	<g id="mouth">
+		<rect id="hole" x="65.2" y="124.8" class="st3" width="69.7" height="23.2"/>
+		<path id="grill" class="st6" d="M63.2,122.8V150h73.6v-27.2H63.2z M74.1,144.7h-5.4v-16.5h5.4V144.7z M83.5,144.7h-5.4v-16.5h5.4
+			V144.7z M93,144.7h-5.4v-16.5H93V144.7z M102.4,144.7H97v-16.5h5.4V144.7z M111.8,144.7h-5.4v-16.5h5.4V144.7z M121.2,144.7h-5.4
+			v-16.5h5.4V144.7z M130.7,144.7h-5.4v-16.5h5.4V144.7z"/>
+	</g>
+	<polygon id="cap_4_" class="st4" points="49.5,77.4 187.2,77.4 187.2,71.3 150.5,71.3 150.5,45.4 49.5,45.4 	"/>
+</g>
+</svg>

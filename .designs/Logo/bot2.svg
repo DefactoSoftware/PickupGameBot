@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EF4136;}
+	.st1{display:none;fill:#47C3CF;}
+	.st2{display:none;fill:#D1DD26;}
+	.st3{fill:#662D91;}
+	.st4{fill:#2B2D2D;}
+	.st5{fill:#BDC9C0;}
+	.st6{fill:#464748;}
+	.st7{fill:#3B97D3;}
+	.st8{fill:#9DA29E;}
+</style>
+<g id="Layer_1">
+	<circle class="st0" cx="100" cy="100" r="100"/>
+	<circle class="st1" cx="135.8" cy="98.1" r="37.6"/>
+	<circle class="st2" cx="55.8" cy="98.1" r="37.6"/>
+	<g>
+		<circle class="st3" cx="529.2" cy="-111.3" r="93.8"/>
+	</g>
+	<g>
+		<rect x="36.6" y="51.6" class="st4" width="3.1" height="62.7"/>
+		<rect x="49.5" y="61.9" class="st5" width="100.9" height="100.9"/>
+		<rect x="42.7" y="92.4" class="st4" width="6.8" height="43.9"/>
+		<rect x="150.5" y="92.4" class="st4" width="6.8" height="43.9"/>
+		<polygon class="st6" points="33.5,109 42.7,102.8 42.7,126 33.5,119.7 		"/>
+		<polygon class="st6" points="166.5,109 157.3,102.8 157.3,126 166.5,119.7 		"/>
+		<circle class="st7" cx="38.1" cy="51.6" r="4.3"/>
+		<g>
+			<g>
+				<path class="st4" d="M121.3,97.7c5.1,0,9.2,4.1,9.2,9.2h6.3c0-8.6-6.9-15.5-15.5-15.5c-8.6,0-15.5,6.9-15.5,15.5h6.3
+					C112.1,101.8,116.2,97.7,121.3,97.7z"/>
+			</g>
+			<g>
+				<path class="st4" d="M78.7,97.7c5.1,0,9.2,4.1,9.2,9.2h6.3c0-8.6-6.9-15.5-15.5-15.5c-8.6,0-15.5,6.9-15.5,15.5h6.3
+					C69.5,101.8,73.6,97.7,78.7,97.7z"/>
+			</g>
+		</g>
+		<rect x="63.2" y="122.8" class="st8" width="73.6" height="27.2"/>
+		<g>
+			<rect x="68.7" y="128.2" class="st4" width="5.4" height="16.5"/>
+			<rect x="78.1" y="128.2" class="st4" width="5.4" height="16.5"/>
+			<rect x="87.6" y="128.2" class="st4" width="5.4" height="16.5"/>
+			<rect x="97" y="128.2" class="st4" width="5.4" height="16.5"/>
+			<rect x="106.4" y="128.2" class="st4" width="5.4" height="16.5"/>
+			<rect x="115.9" y="128.2" class="st4" width="5.4" height="16.5"/>
+			<rect x="125.3" y="128.2" class="st4" width="5.4" height="16.5"/>
+		</g>
+		<polygon class="st7" points="150.5,71.3 150.5,45.4 49.5,45.4 49.5,71.3 49.5,77.4 187.2,77.4 187.2,71.3 		"/>
+	</g>
+</g>
+<g id="Layer_4">
+</g>
+<g id="Layer_3">
+</g>
+</svg>
