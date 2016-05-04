@@ -11,6 +11,8 @@ class PickupBot
       PickupBot::Commands::Help.run(telegram_bot, message)
     when /status/
       PickupBot::Commands::Status.run(telegram_bot, message)
+    when /venue/
+      PickupBot::Commands::Venue.run(telegram_bot, message)
     when /create_game/
       PickupBot::Commands::CreateGame.run(telegram_bot, message)
     when /archive_game/

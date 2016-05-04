@@ -14,6 +14,8 @@ en:
         "%b %-d, %Y"
       short:
         "%B %d"
+      short_time:
+        "%H:%M"
 
   titles:
     application: Pickupgamebot
@@ -30,4 +32,4 @@ en:
     not_attending: "You're not attending the current game, @%{username}"
     left_game: "@%{username} left the game. There are now *%{players}* players."
     game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
-
+    updated_venue: "The venue is now set at: %{venue}"

@@ -1,12 +1,13 @@
 body {
   background: $yellow;
-  padding: 20px;
-  text-transform: uppercase;
   color: $gray-darkest;
+  padding: 1em;
+  text-transform: uppercase;
 }
 
 h1 {
   font-size: 2em;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -18,19 +19,19 @@ $shadow-y: 15px;
   box-shadow: $shadow-x $shadow-y 0 $gray-dark;
   font-size: 1.2em;
   margin-bottom: 20vw;
-  padding: 30px 20px;
+  padding: 25px 20px;
   position: relative;
 
   &::before,
   &::after {
-    mask: url('cloud-arrow.svg') no-repeat top;
-    mask-size: cover;
     content: '';
     display: block;
     height: 30vw * 1.2827586207;
+    left: 60%;
+    mask-size: cover;
+    mask: url('cloud-arrow.svg') no-repeat top;
     max-height: 186px;
     max-width: 145px;
-    left: 60%;
     position: absolute;
     top: calc(100% - 1px);
     width: 30vw;
