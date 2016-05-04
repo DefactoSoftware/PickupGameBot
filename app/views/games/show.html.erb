@@ -12,32 +12,3 @@
 </dl>
 
 <%= image_tag "bot.svg", alt: "Robot", class: "bot" -%>
-
-<br>
-
-<h2>Players</h2>
-<ul>
-  <% @game.attendances.each do |attendance| %>
-    <li><%= attendance.player.username %><li>
-  <% end %>
-</il>
-
-<% if @game.longitude && @game.latitude %>
-
-  <div id="game-location"></div>
-  <script>
-    var loc = [<%= @game.longitude %>, <%= @game.latitude %>];
-    var map = L.map('game-location', {
-      center: loc,
-      zoom: 18,
-      scrollWheelZoom: false
-    });
-
-    L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-      subdomains: ['otile1', 'otile2', 'otile3', 'otile4']
-    }).addTo(map);
-
-    var marker = L.marker(loc).addTo(map);
-  </script>
-
-<% end %>

@@ -24,11 +24,14 @@ dl {
 
   dt {
     @include flex(1 1 50%);
-    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
   }
 
   dd {
     @include flex(0 0 50%);
+    font-weight: bold;
+    padding-left: 10px;
   }
 
   dd,
