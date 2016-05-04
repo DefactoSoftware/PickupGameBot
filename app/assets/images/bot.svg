@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="bot_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 156.3 117.4" style="enable-background:new 0 0 156.3 117.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#BDC9C0;}
+	.st1{fill:#2B2D2D;}
+	.st2{fill:#2980BA;}
+	.st3{fill:#464748;}
+	.st4{fill:#9DA29E;}
+</style>
+<rect id="head" x="18.7" y="32" class="st0" width="100.9" height="85.4"/>
+<g id="headphones">
+	<g id="antenna">
+		<rect id="antenna_1_" x="2.7" y="6.2" class="st1" width="3.1" height="62.7"/>
+		<circle id="cap_3_" class="st2" cx="4.3" cy="6.2" r="4.3"/>
+	</g>
+	<g id="left">
+		<rect id="cushion_1_" x="11.8" y="47" class="st1" width="6.8" height="43.9"/>
+		<polygon id="cap_2_" class="st3" points="2.7,63.6 11.8,57.3 11.8,80.6 2.7,74.3 		"/>
+	</g>
+	<g id="right">
+		<rect id="cushion" x="119.6" y="47" class="st1" width="6.8" height="43.9"/>
+		<polygon id="cap_1_" class="st3" points="135.6,63.6 126.4,57.3 126.4,80.6 135.6,74.3 		"/>
+	</g>
+</g>
+<g id="eyes">
+	<path id="right_1_" class="st1" d="M90.4,52.3c5.1,0,9.2,4.1,9.2,9.2h6.3c0-8.6-6.9-15.5-15.5-15.5c-8.6,0-15.5,6.9-15.5,15.5h6.3
+		C81.2,56.4,85.3,52.3,90.4,52.3z"/>
+	<path id="left_1_" class="st1" d="M47.9,52.3c5.1,0,9.2,4.1,9.2,9.2h6.3c0-8.6-6.9-15.5-15.5-15.5c-8.6,0-15.5,6.9-15.5,15.5h6.3
+		C38.7,56.4,42.8,52.3,47.9,52.3z"/>
+</g>
+<g id="mouth">
+	<rect id="hole" x="34.3" y="79.4" class="st1" width="69.7" height="23.2"/>
+	<path id="grill" class="st4" d="M32.4,77.4v27.2h73.6V77.4H32.4z M43.2,99.2h-5.4V82.7h5.4V99.2z M52.7,99.2h-5.4V82.7h5.4V99.2z
+		 M62.1,99.2h-5.4V82.7h5.4V99.2z M71.5,99.2h-5.4V82.7h5.4V99.2z M80.9,99.2h-5.4V82.7h5.4V99.2z M90.4,99.2H85V82.7h5.4V99.2z
+		 M99.8,99.2h-5.4V82.7h5.4V99.2z"/>
+</g>
+<polygon id="cap_4_" class="st2" points="18.7,32 156.3,32 156.3,25.9 119.6,25.9 119.6,0 18.7,0 "/>
+</svg>

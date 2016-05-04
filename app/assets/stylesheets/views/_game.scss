@@ -1,0 +1,39 @@
+body {
+  background: $yellow;
+  padding: 20px;
+  text-transform: uppercase;
+  color: $gray-darkest;
+}
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.cloud {
+  background: $white;
+  box-shadow: -.6vw 3vw 0 $gray-dark;
+  font-size: 1.2em;
+  margin-bottom: 20vw;
+  padding: 30px 20px;
+  position: relative;
+
+  &::after {
+    background: url('cloud-arrow.svg') no-repeat top;
+    background-size: cover;
+    content: '';
+    display: block;
+    height: 30vw * 1.2827586207;
+    left: 60%;
+    position: absolute;
+    top: calc(100% - 1px);
+    width: 30vw;
+  }
+}
+
+.bot {
+  float: right;
+  margin-right: 35%;
+  max-width: 400px * .65;
+  width: 65%;
+}

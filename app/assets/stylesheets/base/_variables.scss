@@ -16,26 +16,31 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #477dca;
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
+$blue: hsl(203, 67%, 44%);
+$yellow: hsl(52, 100%, 55%);
+
+$white:  hsl(0, 0%, 100%);
+$gray-light: hsl(135, 10%, 76%);
+$gray: hsl(129, 4%, 63%);
+$gray-dark: hsl(180, 1%, 28%);
+$gray-darkest: hsl(180, 2%, 17%);
+$black:  hsl(0, 0%, 0%);
 
 // Font Colors
-$base-font-color: $dark-gray;
+$base-font-color: $gray-darkest;
 $action-color: $blue;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: $gray-light;
 $base-border: 1px solid $base-border-color;
 
 // Background Colors
-$base-background-color: #fff;
+$base-background-color: $white;
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-box-shadow: inset 0 1px 3px rgba($black, .06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -.3);
 
 // Animations
 $base-duration: 150ms;

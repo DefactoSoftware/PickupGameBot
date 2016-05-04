@@ -1,12 +1,26 @@
 <h1><%= @game.name %></h1>
 
-<ul>
-  <li>Start Time: <%= @game.start_time %></li>
-  <li>Required Players: <%= @game.required_players %></li>
-  <li>Game Type: <%= @game.game %></li>
-</ul>
+<dl class="cloud">
+  <dt>Start Time:</dt>
+  <dd>t<%= @game.start_time %></dd>
+
+  <dt>Players:</dt>
+  <dd><%= @game.attendances.count %> / <%= @game.required_players %></dd>
+
+  <dt>Game Type:</dt>
+  <dd><%= @game.game %></dd>
+</dl>
+
+<%= image_tag "bot.svg", alt: "Robot", class: "bot" -%>
 
 <br>
+
+<h2>Players</h2>
+<ul>
+  <% @game.attendances.each do |attendance| %>
+    <li><%= attendance.player.username %><li>
+  <% end %>
+</il>
 
 <% if @game.longitude && @game.latitude %>
 
