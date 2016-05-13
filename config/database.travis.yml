@@ -1,0 +1,7 @@
+test:
+  adapter: postgresql
+  username: postgres
+  password:
+  database: pickupbot_test<%= ENV["TEST_ENV_NUMBER"] %>
+  min_messages: ERROR
+  schema_search_path: "public"
