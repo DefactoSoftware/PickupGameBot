@@ -18,6 +18,14 @@ en:
   titles:
     application: Pickupgamebot
   bot:
+    command_does_not_exist: |
+      Hey @%{username} this command does not exist
+      You can use the following command for this bot
+      /join to join the current game
+      /status to check the status
+      /create_game to start a new game
+      /archive_game to archive the current game
+      /leave to leave a game that you joined
     whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
     game_created: "Game has been created, @%{username}"
