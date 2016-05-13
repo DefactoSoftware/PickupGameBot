@@ -10,14 +10,18 @@ module TelegramHelper
     }
   end
 
-  def message_params(text)
-    {
+  def message_params(text, opts = nil)
+    message_params = {
       chat: telegram_chat,
       from: telegram_user,
       text: text,
       date: 1461013375,
       message_id: 92
     }
+    opts.each do |key, value|
+      message_params[key] = value
+    end
+    message_params
   end
 
   def user_params

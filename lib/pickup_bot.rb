@@ -14,9 +14,14 @@ class PickupBot
     end
   end
 
-    private
+  private
 
   def handle_command(message)
+    handle_text(message) if message.text
+    handle_location(message) if message.location
+  end
+
+  def handle_text(message)
     case message.text
     when /help/
       PickupBot::Commands::Help.run(telegram_bot, message)
@@ -34,6 +39,11 @@ class PickupBot
       PickupBot::Commands::Error.run(telegram_bot, message, exception)
     end
   end
+
+  def handle_location(message)
+    PickupBot::Commands::SetLocation.run(telegram_bot, message)
+  end
 end
+
 
 require 'pickup_bot/commands'

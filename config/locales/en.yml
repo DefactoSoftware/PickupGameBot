@@ -57,8 +57,9 @@ en:
       The current game has been archived.
       Type /create_game to create a new game. You can specify the required
       number of players: */create_game 8*.
-    joined_game: "@%{username} joined the game. There are now %{players} players."
-    not_attending: "You're not attending the current game, @%{username}"
-    left_game: "@%{username} left the game. There are now *%{players}* players."
-    game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
 
+    game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
+    joined_game: "@%{username} joined the game. There are now %{players} players."
+    left_game: "@%{username} left the game. There are now *%{players}* players."
+    location_set: "The location for the current game has been set"
+    not_attending: "You're not attending the current game, @%{username}"
