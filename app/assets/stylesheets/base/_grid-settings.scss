@@ -6,16 +6,22 @@
 // $grid-columns: 12;
 $max-width: 1500px;
 
-$small-screen: em(480);
-$medium-screen: em(768);
-$large-screen: em(992);
-$extra-large-screen: em(1280);
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1280px;
 
-$small-screen-up: new-breakpoint(min-width $small-screen);
-$medium-screen-up: new-breakpoint(min-width $medium-screen);
-$large-screen-up: new-breakpoint(min-width $large-screen);
+$small-screen-up: new-breakpoint(min-width $small-screen + 1);
+$medium-screen-up: new-breakpoint(min-width $medium-screen + 1);
+$large-screen-up: new-breakpoint(min-width $large-screen + 1);
+$extra-large-screen-up: new-breakpoint(min-width $extra-large-screen + 1);
 
 $small-screen-down: new-breakpoint(max-width $small-screen);
 $medium-screen-down: new-breakpoint(max-width $medium-screen);
 $large-screen-down: new-breakpoint(max-width $large-screen);
 $extra-large-screen-down: new-breakpoint(max-width $extra-large-screen);
+
+$small-screen-only: $small-screen-down;
+$medium-screen-only: new-breakpoint(min-width ($small-screen + 1) max-width $medium-screen);
+$large-screen-only: new-breakpoint(min-width ($medium-screen + 1) max-width $large-screen);
+$extra-large-screen-only: new-breakpoint(min-width ($large-screen + 1) max-width $extra-large-screen);

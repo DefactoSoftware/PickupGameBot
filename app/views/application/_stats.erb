@@ -1,6 +1,6 @@
 <div class="stats">
 
-  <%= link_to Game.last, class: "cloud" do %>
+  <%= link_to Game.last, class: "cloud last-game" do %>
     <%= t("stats.last_game") %><br>
     <strong><%= time_ago Game.last.created_at %></strong>
   <% end %>

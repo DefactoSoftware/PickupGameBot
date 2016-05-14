@@ -3,22 +3,29 @@
   $shadow: 0.15em;
 
   display: flex;
-  // flex-flow: row wrap;
-  font-size: 0.5em;
+  flex-wrap: wrap;
+  font-size: 1em;
   justify-content: center;
   line-height: 1.2;
-  margin-left: -$gutter;
-  margin-top: -$gutter;
+  margin-top: $gutter;
+
+  @include media ($medium-screen-up) {
+    font-size: 0.5em;
+    flex-wrap: nowrap;
+  }
 
   .cloud {
     @include clearfix;
     box-shadow: -$shadow $shadow 0 rgba($gray-dark, 0.2);
-    // flex: 1 0 auto;
-    flex: 0 0 auto;
-    margin-left: $gutter;
-    margin-top: $gutter;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    margin: 0 $gutter/2 $gutter;
     padding: 1em;
     width: auto;
+
+    @include media ($medium-screen-up) {
+      flex: 0 0 auto;
+    }
   }
 
   a.cloud {

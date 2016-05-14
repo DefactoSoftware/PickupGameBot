@@ -1,12 +1,12 @@
 .cloud {
-  $shadow-x: -5px;
-  $shadow-y: 15px;
+  $shadow-x: -0.08em;
+  $shadow-y: 0.15em;
 
   background: $white;
   box-shadow: $shadow-x $shadow-y 0 $gray-dark;
   font-size: 1.2em;
   margin-bottom: $small-spacing;
-  padding: 30px 20px;
+  padding: 0.9em 0.75em 0.75em;
   position: relative;
   width: 100%;
 

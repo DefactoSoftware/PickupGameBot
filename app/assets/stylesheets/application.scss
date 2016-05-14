@@ -27,6 +27,7 @@ body {
 .header {
   font-size: 0.7em;
   font-weight: 700;
+  padding: 2em 0;
   text-align: center;
 
   .bot {
@@ -35,6 +36,10 @@ body {
     vertical-align: middle;
     width: 2em;
   }
+
+  @include media ($medium-screen-up) {
+    padding: 0;
+  }
 }
 
 .main {
@@ -42,9 +47,13 @@ body {
 }
 
 .intro {
-  margin: $small-spacing auto;
+  margin: $small-spacing auto $base-spacing;
   max-width: $max-width;
   text-align: center;
+
+  @include media ($medium-screen-up) {
+    padding: 0;
+  }
 }
 
 .footer {
@@ -66,5 +75,10 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+    width: 100px;
+
+    @include media ($medium-screen-up) {
+      width: auto;
+    }
   }
 }
