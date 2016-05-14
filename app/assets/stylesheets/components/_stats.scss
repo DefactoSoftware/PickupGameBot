@@ -1,0 +1,48 @@
+.stats {
+  $gutter: 0.5em;
+  $shadow: 0.15em;
+
+  display: flex;
+  // flex-flow: row wrap;
+  font-size: 0.5em;
+  justify-content: center;
+  line-height: 1.2;
+  margin-left: -$gutter;
+  margin-top: -$gutter;
+
+  .cloud {
+    @include clearfix;
+    box-shadow: -$shadow $shadow 0 rgba($gray-dark, 0.2);
+    // flex: 1 0 auto;
+    flex: 0 0 auto;
+    margin-left: $gutter;
+    margin-top: $gutter;
+    padding: 1em;
+    width: auto;
+  }
+
+  a.cloud {
+    color: $base-font-color;
+    transition: all $base-duration $base-timing;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+
+  .large {
+    float: left;
+    font-size: 2.8em;
+    font-weight: 700;
+    margin: -0.2em 0 -0.2em -0.06em;
+    padding-right: 0.1em;
+    letter-spacing: -0.04em;
+  }
+
+  .large-aside {
+    float: left;
+  }
+}

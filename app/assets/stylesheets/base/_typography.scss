@@ -49,11 +49,11 @@ a {
 }
 
 hr {
-  border-bottom: 4px solid $gray-dark;
+  border-bottom: 0.05em solid $base-font-color;
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: $base-spacing 0;
+  margin: $small-spacing 0;
 }
 
 img,
