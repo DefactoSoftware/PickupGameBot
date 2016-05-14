@@ -23,15 +23,21 @@ en:
   landing:
     intro_html: |
       Hi, I am <strong>Pickupbot</strong>. A Telegram bot that facilitates futsal and other pickup games.
-      All <a href="%{games_path}">games</a> that have been player will be logged here.
+      All <a href="%{games_path}">games</a> that have been played will be logged here.
 
   stats:
     last_game: Last game was played
-    total_games_html: games<br>total
-    total_players_html: players<br>total
+    no_games_played: No games played yet :(
+    total_games_html:
+      one: game<br>total
+      other: games<br>total
+    total_players_html:
+      one: player<br>total
+      other: players<br>total
 
   footer_html: |
-    Build by the <a href="http://www.learningspaces.io" target="_blank">LearningSpaces</a> team.
+    Build by the <a href="http://www.learningspaces.io" target="_blank">LearningSpaces</a>
+    and <a href="https://zerocopter.com" target="_blank">Zerocopter</a> team.<br>
     Source available on <a href="https://github.com/DefactoSoftware/PickupGameBot" target="_blank">GitHub</a>.
 
   bot:
