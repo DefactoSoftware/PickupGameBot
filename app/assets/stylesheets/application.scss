@@ -10,4 +10,32 @@
 
 @import "maps";
 
+@import "components/base";
 @import "views/base";
+
+
+// MISC STYLING ////////////////////////////////
+
+body {
+  padding: 20px;
+
+  @include media ($medium-screen-up) {
+    padding: 40px;
+  }
+}
+
+header {
+  font-size: 0.7em;
+  font-weight: 700;
+  text-align: center;
+
+  .bot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70px;
+  }
+}
+
+.main {
+  @include clearfix;
+}

@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <meta name="ROBOTS" content="NOODP">
   <meta name="viewport" content="initial-scale=1">
-  <%#
-    Configure default and controller-, and view-specific titles in
-    config/locales/en.yml. For more see:
-    https://github.com/calebthompson/title#usage
-  %>
   <title><%= title %></title>
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= render "javascript" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= body_class %>">
+  <header>
+    <%= link_to "/", class: "logo" do %>
+      <%= image_tag "bot.svg", alt: "Robot", class: "bot" %>
+    <% end %>
+  </header>
   <%= render "flashes" -%>
-  <%= yield %>
+  <div class="main">
+    <%= yield %>
+  </div>
 </body>
 </html>
