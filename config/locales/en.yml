@@ -15,8 +15,25 @@ en:
       short:
         "%B %d"
 
+  time_ago: "%{time} ago"
+
   titles:
-    application: Pickupgamebot
+    application: PickupGameBot
+
+  landing:
+    intro_html: |
+      Hi, I am <strong>Pickupbot</strong>. A Telegram bot that facilitates futsal and other pickup games.
+      All <a href="%{games_path}">games</a> that have been player will be logged here.
+
+  stats:
+    last_game: Last game was played
+    total_games_html: games<br>total
+    total_players_html: players<br>total
+
+  footer_html: |
+    Build by the <a href="http://www.learningspaces.io" target="_blank">LearningSpaces</a> team.
+    Source available on <a href="https://github.com/DefactoSoftware/PickupGameBot" target="_blank">GitHub</a>.
+
   bot:
     command_does_not_exist: |
       Hey @%{username} this command does not exist

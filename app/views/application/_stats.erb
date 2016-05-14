@@ -1,9 +1,8 @@
 <div class="stats">
 
   <%= link_to Game.last, class: "cloud" do %>
-    Last game was played<br>
-    <strong><%= time_ago_in_words(Game.last.created_at) %> ago</strong>
-    <!-- <abbr class="timeago" title="<%= Game.last.created_at.getutc.iso8601 %>"><%= Game.last.created_at.to_s %></abbr> -->
+    <%= t("stats.last_game") %><br>
+    <strong><%= time_ago Game.last.created_at %></strong>
   <% end %>
 
   <%= link_to games_path, class: "cloud" do %>
@@ -12,7 +11,7 @@
       <%#= number_to_human(Game.count, format: "%n%u", units: { thousand: "K" }) %>
     </span>
     <div class="large-aside">
-      games<br>total
+      <%= t("stats.total_games_html") %>
     </div>
   <% end %>
 
@@ -22,7 +21,7 @@
       <%#= number_to_human(Player.count, format: "%n%u", units: { thousand: "K" }) %>
     </span>
     <div class="large-aside">
-      players<br>total
+      <%= t("stats.total_players_html") %>
     </div>
   </div>
 
