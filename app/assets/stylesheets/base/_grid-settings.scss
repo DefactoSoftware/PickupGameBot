@@ -1,14 +1,27 @@
-@import "neat-helpers"; // or "../neat/neat-helpers" when not in Rails
+@import "neat-helpers";
 
 // Neat Overrides
 // $column: 90px;
 // $gutter: 30px;
 // $grid-columns: 12;
-// $max-width: 1200px;
+$max-width: 1500px;
 
-// Neat Breakpoints
-$medium-screen: 600px;
-$large-screen: 900px;
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1280px;
 
-$medium-screen-up: new-breakpoint(min-width $medium-screen 4);
-$large-screen-up: new-breakpoint(min-width $large-screen 8);
+$small-screen-up: new-breakpoint(min-width $small-screen + 1);
+$medium-screen-up: new-breakpoint(min-width $medium-screen + 1);
+$large-screen-up: new-breakpoint(min-width $large-screen + 1);
+$extra-large-screen-up: new-breakpoint(min-width $extra-large-screen + 1);
+
+$small-screen-down: new-breakpoint(max-width $small-screen);
+$medium-screen-down: new-breakpoint(max-width $medium-screen);
+$large-screen-down: new-breakpoint(max-width $large-screen);
+$extra-large-screen-down: new-breakpoint(max-width $extra-large-screen);
+
+$small-screen-only: $small-screen-down;
+$medium-screen-only: new-breakpoint(min-width ($small-screen + 1) max-width $medium-screen);
+$large-screen-only: new-breakpoint(min-width ($medium-screen + 1) max-width $large-screen);
+$extra-large-screen-only: new-breakpoint(min-width ($large-screen + 1) max-width $extra-large-screen);

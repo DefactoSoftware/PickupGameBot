@@ -15,8 +15,31 @@ en:
       short:
         "%B %d"
 
+  time_ago: "%{time} ago"
+
   titles:
-    application: Pickupgamebot
+    application: PickupGameBot
+
+  landing:
+    intro_html: |
+      Hi, I am <strong>Pickupbot</strong>. A Telegram bot that facilitates futsal and other pickup games.
+      All <a href="%{games_path}">games</a> that have been played will be logged here.
+
+  stats:
+    last_game: Last game was played
+    no_games_played: No games played yet :(
+    total_games_html:
+      one: game<br>total
+      other: games<br>total
+    total_players_html:
+      one: player<br>total
+      other: players<br>total
+
+  footer_html: |
+    Build by the <a href="http://www.learningspaces.io" target="_blank">LearningSpaces</a>
+    and <a href="https://zerocopter.com" target="_blank">Zerocopter</a> team.<br>
+    Source available on <a href="https://github.com/DefactoSoftware/PickupGameBot" target="_blank">GitHub</a>.
+
   bot:
     command_does_not_exist: |
       Hey @%{username} this command does not exist
@@ -33,7 +56,7 @@ en:
     game_archived: |
       The current game has been archived.
       Type /create_game to create a new game. You can specify the required
-      number of players: */create game 8*.
+      number of players: */create_game 8*.
     joined_game: "@%{username} joined the game. There are now %{players} players."
     not_attending: "You're not attending the current game, @%{username}"
     left_game: "@%{username} left the game. There are now *%{players}* players."

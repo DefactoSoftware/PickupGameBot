@@ -1,3 +1,5 @@
-Welcome
+<div class="intro">
+  <%= t("landing.intro_html", games_path: games_path) %>
+</div>
 
-<%= link_to "Games", games_path %>
+<%= render "stats" %>

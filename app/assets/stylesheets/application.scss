@@ -10,4 +10,75 @@
 
 @import "maps";
 
+@import "components/base";
 @import "views/base";
+
+
+// MISC STYLING ////////////////////////////////
+
+body {
+  padding: 20px;
+
+  @include media ($medium-screen-up) {
+    padding: 40px;
+  }
+}
+
+.header {
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 2em 0;
+  text-align: center;
+
+  .bot {
+    display: inline-block;
+    min-width: 70px;
+    vertical-align: middle;
+    width: 2em;
+  }
+
+  @include media ($medium-screen-up) {
+    padding: 0;
+  }
+}
+
+.main {
+  @include clearfix;
+}
+
+.intro {
+  margin: $small-spacing auto $base-spacing;
+  max-width: $max-width;
+  text-align: center;
+
+  @include media ($medium-screen-up) {
+    padding: 0;
+  }
+}
+
+.footer {
+  font-size: 0.4em;
+  font-weight: 700;
+  margin-top: $base-spacing;
+  opacity: 0.3;
+  text-align: center;
+  transition: opacity $base-duration $base-timing;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.github-ribbon {
+  img {
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+
+    @include media ($medium-screen-up) {
+      width: auto;
+    }
+  }
+}

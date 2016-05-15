@@ -1,15 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
 
-$base-font-family: 'Open Sans Condensed', sans-serif;
-$heading-font-family: $base-font-family;
-$base-font-size: 5vw;
-
 body {
-  color: $base-font-color;
+  background-color: $yellow;
+  color: $gray-darkest;
   font-family: $base-font-family;
-  font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: 'kern', 'liga', 'pnum';
   font-size: $base-font-size;
   line-height: $base-line-height;
+  text-transform: uppercase;
+
+  @include media ($medium-screen-up) {
+    padding: 40px;
+  }
 }
 
 h1,
@@ -23,6 +25,12 @@ h6 {
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
 }
+
+h1 {
+  font-size: 1.6em;
+  text-align: center;
+}
+
 
 p {
   margin: 0 0 $small-spacing;
@@ -41,11 +49,11 @@ a {
 }
 
 hr {
-  border-bottom: $base-border;
+  border-bottom: 0.05em solid $base-font-color;
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: $base-spacing 0;
+  margin: $small-spacing 0;
 }
 
 img,

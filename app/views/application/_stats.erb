@@ -1,0 +1,35 @@
+<div class="stats">
+
+  <% if Game.last %>
+    <%= link_to Game.last, class: "cloud last-game" do %>
+      <%= t("stats.last_game") %><br>
+      <strong><%= time_ago Game.last.created_at %></strong>
+    <% end %>
+  <% else %>
+    <div class="cloud last-game">
+      <%= t("stats.last_game") %><br>
+      <strong><%= t("stats.no_games_played") %></strong>
+    </div>
+  <% end %>
+
+  <%= link_to games_path, class: "cloud" do %>
+    <span class="large">
+      <%= Game.count %>
+      <%#= number_to_human(Game.count, format: "%n%u", units: { thousand: "K" }) %>
+    </span>
+    <div class="large-aside">
+      <%= t("stats.total_games_html", count: Game.count) %>
+    </div>
+  <% end %>
+
+  <div class="cloud">
+    <span class="large">
+      <%= Player.count %>
+      <%#= number_to_human(Player.count, format: "%n%u", units: { thousand: "K" }) %>
+    </span>
+    <div class="large-aside">
+      <%= t("stats.total_players_html", count: Player.count) %>
+    </div>
+  </div>
+
+</div>
