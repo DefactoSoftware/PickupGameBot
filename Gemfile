@@ -23,6 +23,7 @@ gem "title"
 gem "uglifier"
 gem "telegram-bot-ruby"
 gem "leaflet-rails"
+gem "paperclip", "~> 5.0.0.beta1"
 
 group :development do
   gem "quiet_assets"
