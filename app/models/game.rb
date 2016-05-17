@@ -14,10 +14,12 @@
 #  updated_at       :datetime         not null
 #  uuid             :uuid
 #  archived_at      :datetime
+#  locations_id     :integer
 #
 
 class Game < ActiveRecord::Base
   extend BooleanDateTime
+  has_one :location
   has_many :attendances
   has_many :players, through: :attendances
 

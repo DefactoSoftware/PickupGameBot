@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20160422153232) do
     t.datetime "archived_at"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string   "longitude"
+    t.string   "latitude"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "game_id"
+  end
+
+  add_index "locations", ["game_id"], name: "index_locations_on_game_id", using: :btree
+
   create_table "players", force: :cascade do |t|
     t.string  "first_name"
     t.string  "last_name"

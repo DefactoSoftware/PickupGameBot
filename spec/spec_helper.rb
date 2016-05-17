@@ -21,6 +21,8 @@ end
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect
   end

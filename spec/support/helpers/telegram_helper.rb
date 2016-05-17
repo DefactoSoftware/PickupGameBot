@@ -10,14 +10,15 @@ module TelegramHelper
     }
   end
 
-  def message_params(text)
-    {
+  def message_params(text, opts = {})
+    message_params = {
       chat: telegram_chat,
       from: telegram_user,
       text: text,
       date: 1461013375,
       message_id: 92
     }
+    message_params.merge(opts)
   end
 
   def user_params

@@ -14,6 +14,7 @@
 #  updated_at       :datetime         not null
 #  uuid             :uuid
 #  archived_at      :datetime
+#  locations_id     :integer
 #
 
 class GamesController < ApplicationController

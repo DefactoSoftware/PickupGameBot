@@ -5,7 +5,7 @@ feature "games overview" do
     game = Game.new(name: "Futsal")
     game.save
     visit root_url
-    click_link "Games"
+    click_link "games"
   end
 
   scenario "anonymous user visit list of games" do
