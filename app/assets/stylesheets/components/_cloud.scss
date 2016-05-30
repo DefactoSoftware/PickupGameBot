@@ -1,6 +1,6 @@
 .cloud {
-  $shadow-x: -0.08em;
-  $shadow-y: 0.15em;
+  $shadow-x: -0.1em;
+  $shadow-y: 0.3em;
 
   background: $white;
   box-shadow: $shadow-x $shadow-y 0 $gray-dark;
@@ -19,7 +19,7 @@
       display: block;
       height: 30vw * 1.2827586207;
       left: 60%;
-      mask: url('cloud-arrow.svg') no-repeat top;
+      mask: image-url('cloud-arrow.svg') no-repeat top;
       mask-size: cover;
       max-height: 186px;
       max-width: 145px;

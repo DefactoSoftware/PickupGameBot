@@ -1,0 +1,176 @@
+@include font-face(icons, 'icons/icons', normal, true);
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'icons' !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-link::before {
+  content: '\e005';
+}
+
+.icon-bell::before {
+  content: '\e006';
+}
+
+.icon-lock::before {
+  content: '\e007';
+}
+
+.icon-unlock::before {
+  content: '\e008';
+}
+
+.icon-image::before {
+  content: '\e010';
+}
+
+.icon-clock::before {
+  content: '\e014';
+}
+
+.icon-watch::before {
+  content: '\e015';
+}
+
+.icon-cog::before {
+  content: '\e023';
+}
+
+.icon-heart::before {
+  content: '\e024';
+}
+
+.icon-reply::before {
+  content: '\e039';
+}
+
+.icon-circle-plus::before {
+  content: '\e040';
+}
+
+.icon-circle-minus::before {
+  content: '\e041';
+}
+
+.icon-square-plus::before {
+  content: '\e044';
+}
+
+.icon-square-minus::before {
+  content: '\e045';
+}
+
+.icon-square-check::before {
+  content: '\e046';
+}
+
+.icon-square-cross::before {
+  content: '\e047';
+}
+
+.icon-skip-back::before {
+  content: '\e050';
+}
+
+.icon-rewind::before {
+  content: '\e051';
+}
+
+.icon-fast-forward::before {
+  content: '\e055';
+}
+
+.icon-skip-forward::before {
+  content: '\e056';
+}
+
+.icon-repeat::before {
+  content: '\e058';
+}
+
+.icon-umbrella::before {
+  content: '\e060';
+}
+
+.icon-moon::before {
+  content: '\e061';
+}
+
+.icon-thermometer::before {
+  content: '\e062';
+}
+
+.icon-drop::before {
+  content: '\e063';
+}
+
+.icon-sun::before {
+  content: '\e064';
+}
+
+.icon-cloud::before {
+  content: '\e065';
+}
+
+.icon-location::before {
+  content: '\e070';
+}
+
+.icon-location-2::before {
+  content: '\e071';
+}
+
+.icon-map::before {
+  content: '\e072';
+}
+
+.icon-head::before {
+  content: '\e074';
+}
+
+.icon-reload::before {
+  content: '\e080';
+}
+
+.icon-share::before {
+  content: '\e081';
+}
+
+.icon-star::before {
+  content: '\e093';
+}
+
+.icon-arrow-left::before {
+  content: '\e094';
+}
+
+.icon-arrow-right::before {
+  content: '\e095';
+}
+
+.icon-arrow-up::before {
+  content: '\e096';
+}
+
+.icon-arrow-down::before {
+  content: '\e097';
+}
+
+.icon-trash::before {
+  content: '\e109';
+}
+
+.icon-ellipsis::before {
+  content: '\e129';
+}
