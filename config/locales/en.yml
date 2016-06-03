@@ -40,7 +40,7 @@ en:
   footer_html: |
     Build by the <a href="http://www.learningspaces.io" target="_blank">LearningSpaces</a>
     and <a href="https://zerocopter.com" target="_blank">Zerocopter</a> team.<br>
-    Source available on <a href="https://github.com/DefactoSoftware/PickupGameBot" target="_blank">GitHub</a>.
+    Source available on <a href="https://github.com/DefactoSoftware/PickupGameBot" target="_blank"><span class="icon-social-github"></span>GitHub</a>.
 
   bot:
     command_does_not_exist: |

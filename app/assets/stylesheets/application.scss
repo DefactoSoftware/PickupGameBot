@@ -59,13 +59,18 @@ body {
 .footer {
   font-size: 0.4em;
   font-weight: 700;
-  margin-top: $base-spacing;
+  margin-top: 3em;
   opacity: 0.3;
   text-align: center;
   transition: opacity $base-duration $base-timing;
 
   &:hover {
     opacity: 0.7;
+  }
+
+  .icon-social-github {
+    font-size: 150%;
+    vertical-align: text-top;
   }
 }
 

@@ -1,0 +1,78 @@
+$spacing: 3%;
+$shadow: 0.15em;
+
+.archive,
+.upcoming {
+  .game {
+    box-shadow: -$shadow $shadow 0 rgba($gray-dark, 0.2);
+    color: $base-font-color;
+    display: block;
+    margin: 0 0 1em;
+    transition: all $base-duration $base-timing;
+
+    &:active,
+    &:focus,
+    &:hover {
+      @include transform(scale(1.05));
+      box-shadow: -$shadow / 2 $shadow / 2 0 rgba($gray-dark, 0.1);
+    }
+
+    li {
+      line-height: 1.6em;
+    }
+
+    span {
+      margin-right: 0.2em;
+    }
+  }
+}
+
+.upcoming {
+  .game {
+    &:active,
+    &:focus,
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.games-list {
+  &.archive {
+    .game {
+      background: rgba($white, 0.6);
+      position: relative;
+
+      &:active,
+      &:focus,
+      &:hover {
+        background: $white;
+      }
+    }
+
+    li {
+      &:nth-child(odd) a {
+        margin-left: 0;
+      }
+
+      &:nth-child(even) a {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .game {
+    float: left;
+    margin: $spacing;
+    width: 50% - $spacing;
+
+    li {
+      line-height: 1.6em;
+    }
+
+    span {
+      margin-right: 0.2em;
+    }
+  }
+}
