@@ -1,3 +1,37 @@
+<div class="upcoming">
+  <%= link_to Game.last, class: "game cloud" do %>
+    <h1>
+      [Upcoming] <small><%= Game.last.name %></small>
+    </h1>
+    <ul>
+      <% if Game.last.start_time && Game.last.start_time.to_date == Date.today %>
+        <li>
+          <span class="icon-watch"></span>
+          <%= l Game.last.start_time, format: :short_time %>
+        </li>
+      <% elsif Game.last.start_time %>
+        <li>
+          <span class="icon-watch"></span>
+          <%= l Game.last.start_time, format: :short %>, <%= l Game.last.start_time, format: :short_time %>
+        </li>
+      <% end %>
+
+      <li>
+        <span class="icon-head"></span>
+        <%= Game.last.attendances.count || 0 %>
+        <%= "/ #{Game.last.required_players}" if Game.last.required_players %>
+      </li>
+
+      <% if Game.last.game %>
+        <li>
+          <span class="icon-trophy"></span>
+          <%= Game.last.game %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <div class="stats">
 
   <% if Game.last %>
