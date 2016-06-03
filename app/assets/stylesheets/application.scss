@@ -17,7 +17,7 @@
 // MISC STYLING ////////////////////////////////
 
 body {
-  padding: 20px;
+  padding: 1em;
 
   @include media ($medium-screen-up) {
     padding: 40px;
@@ -76,6 +76,7 @@ body {
     right: 0;
     top: 0;
     width: 100px;
+    z-index: 10;
 
     @include media ($medium-screen-up) {
       width: auto;

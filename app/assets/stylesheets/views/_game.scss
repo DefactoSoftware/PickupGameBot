@@ -1,4 +1,15 @@
 .games-show {
+  .header {
+    display: none;
+  }
+
+  .back {
+    color: $base-font-color;
+    font-size: 1.4em;
+    margin-top: 0.22em;
+    position: absolute;
+  }
+
   .main .bot {
     float: right;
     margin-right: 35%;
