@@ -12,6 +12,11 @@ module Commands
     def run
       if game_exists?
         current_player = Player.find_or_create_by(telegram_user_id: message.from.id)
+        current_player.first_name = message.from.first_name
+        current_player.last_name = message.from.last_name
+        current_player.username = message.from.username
+        current_player.save
+
         attendence = Attendance.new(game: current_game, player: current_player)
         attendence.save
         telegram_bot.api.send_message(
