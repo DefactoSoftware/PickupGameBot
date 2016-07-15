@@ -1,4 +1,5 @@
 module Commands
+  include Operation
   class Join
     def self.run(telegram_bot, message)
       new(telegram_bot, message).run
@@ -12,8 +13,13 @@ module Commands
     def run
       if game_exists?
         current_player = Player.find_or_create_by(telegram_user_id: message.from.id)
-        attendence = Attendance.new(game: current_game, player: current_player)
-        attendence.save
+        current_player.first_name = message.from.first_name
+        current_player.last_name = message.from.last_name
+        current_player.username = message.from.username
+        current_player.save
+
+        Attendance::Create.run(current_game, current_player)
+
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
           text: I18n.t(

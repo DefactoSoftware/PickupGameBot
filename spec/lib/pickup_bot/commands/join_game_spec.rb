@@ -51,6 +51,7 @@ feature "joining a game" do
             )).to have_been_made.times(1)
       expect(Player.count).to eq 1
       expect(Game.last.attendances.count).to eq 1
+      expect(Player.last.first_name).to eq message.from.first_name
     end
 
     scenario "existing player joins game" do
