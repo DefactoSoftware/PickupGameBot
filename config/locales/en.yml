@@ -62,6 +62,7 @@ en:
 
     game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
     joined_game: "@%{username} joined the game. There are now %{players} players."
+    kick_user: "This user was kicked from the game."
     left_game: "@%{username} left the game. There are now *%{players}* players."
     location_set: "The location for the current game has been set"
     not_attending: "You're not attending the current game, @%{username}"
