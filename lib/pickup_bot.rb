@@ -9,8 +9,6 @@ class PickupBot
     begin
       handle_command(message)
     rescue => exception
-      puts 'gerwin test dit'
-      puts exception.message
       Rails.logger.error exception.message
       PickupBot::Commands::Error.run(telegram_bot, message, exception)
     end
