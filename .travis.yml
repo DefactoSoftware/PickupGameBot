@@ -3,6 +3,7 @@ rvm:
 bundler_args: "--without debug development"
 cache: bundler
 before_script:
+- export SECRET_KEY_BASE="$(bundle exec rake secret)"
 - cp .sample.env .env
 - cp config/database.travis.yml config/database.yml
 - bundle exec rake db:create
