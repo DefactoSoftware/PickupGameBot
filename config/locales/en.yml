@@ -53,7 +53,9 @@ en:
       /leave to leave a game that you joined
     whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
-    game_created: "Game has been created, @%{username}"
+    game_created: |
+      Game has been created, @%{username}
+      You can join this game with /join
     game_exists: "An active game already exists, @%{username}"
     game_archived: |
       The current game has been archived.
