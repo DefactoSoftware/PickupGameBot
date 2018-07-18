@@ -1,4 +1,4 @@
-module Commands
+module PickupBot::Commands
   class Error
     def self.run(telegram_bot, message, exception)
       new(telegram_bot, message).run

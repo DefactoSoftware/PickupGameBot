@@ -1,4 +1,4 @@
-module Commands
+module PickupBot::Commands
   class CreateGame
     def self.run(telegram_bot, message)
       new(telegram_bot, message).run
