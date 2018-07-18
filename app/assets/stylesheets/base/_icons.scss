@@ -14,163 +14,333 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+$icon-trophy: "\e900";
+$icon-social-github: "\e901";
+$icon-link: "\e005";
+$icon-bell: "\e006";
+$icon-lock: "\e007";
+$icon-unlock: "\e008";
+$icon-image: "\e010";
+$icon-clock: "\e014";
+$icon-watch: "\e015";
+$icon-cog: "\e023";
+$icon-heart: "\e024";
+$icon-reply: "\e039";
+$icon-circle-plus: "\e040";
+$icon-circle-minus: "\e041";
+$icon-square-plus: "\e044";
+$icon-square-minus: "\e045";
+$icon-square-check: "\e046";
+$icon-square-cross: "\e047";
+$icon-skip-back: "\e050";
+$icon-rewind: "\e051";
+$icon-fast-forward: "\e055";
+$icon-skip-forward: "\e056";
+$icon-repeat: "\e058";
+$icon-umbrella: "\e060";
+$icon-moon: "\e061";
+$icon-thermometer: "\e062";
+$icon-drop: "\e063";
+$icon-sun: "\e064";
+$icon-cloud: "\e065";
+$icon-location: "\e070";
+$icon-location-2: "\e071";
+$icon-map: "\e072";
+$icon-head: "\e074";
+$icon-reload: "\e080";
+$icon-share: "\e081";
+$icon-star: "\e093";
+$icon-arrow-left: "\e094";
+$icon-arrow-right: "\e095";
+$icon-arrow-up: "\e096";
+$icon-arrow-down: "\e097";
+$icon-loader: "\e105";
+$icon-trash: "\e109";
+$icon-plus: "\e114";
+$icon-minus: "\e115";
+$icon-check: "\e116";
+$icon-cross: "\e117";
+$icon-ellipsis: "\e129";
 
-.icon-link::before {
-  content: '\e005';
+.icon-trophy {
+  &::before {
+    content: $icon-trophy;
+  }
 }
 
-.icon-bell::before {
-  content: '\e006';
+.icon-social-github {
+  &::before {
+    content: $icon-social-github;
+  }
 }
 
-.icon-lock::before {
-  content: '\e007';
+.icon-link {
+  &::before {
+    content: $icon-link;
+  }
 }
 
-.icon-unlock::before {
-  content: '\e008';
+.icon-bell {
+  &::before {
+    content: $icon-bell;
+  }
 }
 
-.icon-image::before {
-  content: '\e010';
+.icon-lock {
+  &::before {
+    content: $icon-lock;
+  }
 }
 
-.icon-clock::before {
-  content: '\e014';
+.icon-unlock {
+  &::before {
+    content: $icon-unlock;
+  }
 }
 
-.icon-watch::before {
-  content: '\e015';
+.icon-image {
+  &::before {
+    content: $icon-image;
+  }
 }
 
-.icon-cog::before {
-  content: '\e023';
+.icon-clock {
+  &::before {
+    content: $icon-clock;
+  }
 }
 
-.icon-heart::before {
-  content: '\e024';
+.icon-watch {
+  &::before {
+    content: $icon-watch;
+  }
 }
 
-.icon-reply::before {
-  content: '\e039';
+.icon-cog {
+  &::before {
+    content: $icon-cog;
+  }
 }
 
-.icon-circle-plus::before {
-  content: '\e040';
+.icon-heart {
+  &::before {
+    content: $icon-heart;
+  }
 }
 
-.icon-circle-minus::before {
-  content: '\e041';
+.icon-reply {
+  &::before {
+    content: $icon-reply;
+  }
 }
 
-.icon-square-plus::before {
-  content: '\e044';
+.icon-circle-plus {
+  &::before {
+    content: $icon-circle-plus;
+  }
 }
 
-.icon-square-minus::before {
-  content: '\e045';
+.icon-circle-minus {
+  &::before {
+    content: $icon-circle-minus;
+  }
 }
 
-.icon-square-check::before {
-  content: '\e046';
+.icon-square-plus {
+  &::before {
+    content: $icon-square-plus;
+  }
 }
 
-.icon-square-cross::before {
-  content: '\e047';
+.icon-square-minus {
+  &::before {
+    content: $icon-square-minus;
+  }
 }
 
-.icon-skip-back::before {
-  content: '\e050';
+.icon-square-check {
+  &::before {
+    content: $icon-square-check;
+  }
 }
 
-.icon-rewind::before {
-  content: '\e051';
+.icon-square-cross {
+  &::before {
+    content: $icon-square-cross;
+  }
 }
 
-.icon-fast-forward::before {
-  content: '\e055';
+.icon-skip-back {
+  &::before {
+    content: $icon-skip-back;
+  }
 }
 
-.icon-skip-forward::before {
-  content: '\e056';
+.icon-rewind {
+  &::before {
+    content: $icon-rewind;
+  }
 }
 
-.icon-repeat::before {
-  content: '\e058';
+.icon-fast-forward {
+  &::before {
+    content: $icon-fast-forward;
+  }
 }
 
-.icon-umbrella::before {
-  content: '\e060';
+.icon-skip-forward {
+  &::before {
+    content: $icon-skip-forward;
+  }
 }
 
-.icon-moon::before {
-  content: '\e061';
+.icon-repeat {
+  &::before {
+    content: $icon-repeat;
+  }
 }
 
-.icon-thermometer::before {
-  content: '\e062';
+.icon-umbrella {
+  &::before {
+    content: $icon-umbrella;
+  }
 }
 
-.icon-drop::before {
-  content: '\e063';
+.icon-moon {
+  &::before {
+    content: $icon-moon;
+  }
 }
 
-.icon-sun::before {
-  content: '\e064';
+.icon-thermometer {
+  &::before {
+    content: $icon-thermometer;
+  }
 }
 
-.icon-cloud::before {
-  content: '\e065';
+.icon-drop {
+  &::before {
+    content: $icon-drop;
+  }
 }
 
-.icon-location::before {
-  content: '\e070';
+.icon-sun {
+  &::before {
+    content: $icon-sun;
+  }
 }
 
-.icon-location-2::before {
-  content: '\e071';
+.icon-cloud {
+  &::before {
+    content: $icon-cloud;
+  }
 }
 
-.icon-map::before {
-  content: '\e072';
+.icon-location {
+  &::before {
+    content: $icon-location;
+  }
 }
 
-.icon-head::before {
-  content: '\e074';
+.icon-location-2 {
+  &::before {
+    content: $icon-location-2;
+  }
 }
 
-.icon-reload::before {
-  content: '\e080';
+.icon-map {
+  &::before {
+    content: $icon-map;
+  }
 }
 
-.icon-share::before {
-  content: '\e081';
+.icon-head {
+  &::before {
+    content: $icon-head;
+  }
 }
 
-.icon-star::before {
-  content: '\e093';
+.icon-reload {
+  &::before {
+    content: $icon-reload;
+  }
 }
 
-.icon-arrow-left::before {
-  content: '\e094';
+.icon-share {
+  &::before {
+    content: $icon-share;
+  }
 }
 
-.icon-arrow-right::before {
-  content: '\e095';
+.icon-star {
+  &::before {
+    content: $icon-star;
+  }
 }
 
-.icon-arrow-up::before {
-  content: '\e096';
+.icon-arrow-left {
+  &::before {
+    content: $icon-arrow-left;
+  }
 }
 
-.icon-arrow-down::before {
-  content: '\e097';
+.icon-arrow-right {
+  &::before {
+    content: $icon-arrow-right;
+  }
 }
 
-.icon-trash::before {
-  content: '\e109';
+.icon-arrow-up {
+  &::before {
+    content: $icon-arrow-up;
+  }
 }
 
-.icon-ellipsis::before {
-  content: '\e129';
+.icon-arrow-down {
+  &::before {
+    content: $icon-arrow-down;
+  }
 }
+
+.icon-loader {
+  &::before {
+    content: $icon-loader;
+  }
+}
+
+.icon-trash {
+  &::before {
+    content: $icon-trash;
+  }
+}
+
+.icon-plus {
+  &::before {
+    content: $icon-plus;
+  }
+}
+
+.icon-minus {
+  &::before {
+    content: $icon-minus;
+  }
+}
+
+.icon-check {
+  &::before {
+    content: $icon-check;
+  }
+}
+
+.icon-cross {
+  &::before {
+    content: $icon-cross;
+  }
+}
+
+.icon-ellipsis {
+  &::before {
+    content: $icon-ellipsis;
+  }
+}
+
