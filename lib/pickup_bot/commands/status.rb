@@ -1,4 +1,4 @@
-module Commands
+module PickupBot::Commands
   class Status
     include ActionView::Helpers
     include ActionDispatch::Routing

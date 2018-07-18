@@ -1,4 +1,4 @@
-module Commands
+module PickupBot::Commands
 end
 
 require 'pickup_bot/commands/archive_game'
