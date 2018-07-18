@@ -12,6 +12,9 @@ module PickupBot::Commands
     def run
       if game_exists?
         current_player = Player.find_or_create_by(telegram_user_id: message.from.id)
+        unless current_player.username
+          current_player.update(username: username)
+        end
         attendence = Attendance.new(game: current_game, player: current_player)
         attendence.save
         telegram_bot.api.send_message(

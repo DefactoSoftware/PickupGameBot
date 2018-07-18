@@ -35,6 +35,8 @@ class PickupBot
       PickupBot::Commands::Join.run(telegram_bot, message)
     when /leave/
       PickupBot::Commands::Leave.run(telegram_bot, message)
+    when /kick/
+      PickupBot::Commands::Kick.run(telegram_bot, message)
     else
       PickupBot::Commands::Error.run(telegram_bot, message, exception)
     end
