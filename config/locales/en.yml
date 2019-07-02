@@ -53,6 +53,7 @@ en:
       /leave to leave a game that you joined
     whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
+    date: "The date is set to %{date}"
     time: "The game time is %{time}"
     game_created: |
       Game has been created, @%{username}

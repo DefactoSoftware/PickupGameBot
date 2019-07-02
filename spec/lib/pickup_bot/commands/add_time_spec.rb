@@ -11,7 +11,6 @@ feature "add time to a game" do
 
   before :each do
     stub_request(:any, /api.telegram.org/).to_return(status: 200, body:"[]", :headers => {})
-    # stub_request(:any, /api.telegram.org/).to_return(status: 200, body:"[]", :headers => {})
   end
 
   context "no game currently exists" do
