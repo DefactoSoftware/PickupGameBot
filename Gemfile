@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.5.1"
+ruby "2.6.0"
 
 gem "autoprefixer-rails"
 gem "bourbon", "~> 4.2.0"
@@ -44,7 +44,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "capybara-webkit", "~> 1.14.0"
+  gem "capybara-webkit"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"

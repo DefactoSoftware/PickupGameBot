@@ -53,6 +53,7 @@ en:
       /leave to leave a game that you joined
     whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
+    time: "The game time is %{time}"
     game_created: |
       Game has been created, @%{username}
       You can join this game with /join
@@ -66,4 +67,5 @@ en:
     joined_game: "@%{username} joined the game. There are now %{players} players."
     left_game: "@%{username} left the game. There are now *%{players}* players."
     location_set: "The location for the current game has been set"
+    date_and_time: "The  date and time is %{hour}:%{minute}"
     not_attending: "You're not attending the current game, @%{username}"
