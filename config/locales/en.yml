@@ -51,8 +51,7 @@ en:
       /create_game to start a new game
       /archive_game to archive the current game
       /leave to leave a game that you joined
-      /add_time to add a time to the current game
-      /add_date to add a date to the current game
+      /set_time to add a time to the current game
     whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
     date: "The date is set to %{date}"

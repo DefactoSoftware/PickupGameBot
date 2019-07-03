@@ -52,8 +52,7 @@ ActiveRecord::Schema.define(version: 20190702161748) do
     t.datetime "updated_at",                                      null: false
     t.uuid     "uuid",             default: "uuid_generate_v4()"
     t.datetime "archived_at"
-    t.string   "time"
-    t.string   "date"
+    t.datetime "datetime"
   end
 
   create_table "locations", force: :cascade do |t|

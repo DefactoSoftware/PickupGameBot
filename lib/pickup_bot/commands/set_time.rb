@@ -1,5 +1,5 @@
 module PickupBot::Commands
-  class AddTime
+  class SetTime
     def self.run(telegram_bot, message)
       new(telegram_bot, message).run
     end
@@ -10,17 +10,10 @@ module PickupBot::Commands
     end
 
     def run
-      if game_exists? && time.present?
-        current_game.update(time: time)
-        if game_date?
-          # telegram_bot.api.send_message(
-          #   chat_id: message.chat.id,
-          #   text: I18n.t("bot.date_and_time", username: username, date: parse_date, time: "#{time.hour}:#{time.minute}")
-          # )
-        else
+      if game_exists? && current_game.update(datetime: datetime)
           telegram_bot.api.send_message(
             chat_id: message.chat.id,
-            text: I18n.t("bot.time", time: time)
+            text: I18n.t("bot.date")
           )
         end
       else
@@ -59,11 +52,10 @@ module PickupBot::Commands
        current_game.blank?
     end
 
-    def time
-      text = @message.text
+    def datetime
+      @message.text
         .then { |x| x.split(" ", 2).last.strip }
-        .then { |x| Time.parse(x) }
-        .then { |time| "#{format('%02d', time.hour)}:#{format('%02d', time.min)}" }
+        .then { |x| Chronic.parse(x) }
     end
   end
 end

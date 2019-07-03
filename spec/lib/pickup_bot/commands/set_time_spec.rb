@@ -2,7 +2,7 @@ require "spec_helper"
 require 'telegram/bot'
 require 'pickup_bot'
 
-feature "add time to a game" do
+feature "sit time to a game" do
   let(:bot) { Telegram::Bot::Client.new('fake-token') }
   let(:pickup_bot) { PickupBot.new(bot) }
   let(:telegram_user) { Telegram::Bot::Types::User.new(user_params) }
@@ -15,7 +15,7 @@ feature "add time to a game" do
 
   context "no game currently exists" do
     scenario "player tries to add a time" do
-      message = Telegram::Bot::Types::Message.new(message_params('/add_time 06:00'))
+      message = Telegram::Bot::Types::Message.new(message_params('/set_time 06:00'))
 
       pickup_bot.run(message)
 
@@ -32,9 +32,30 @@ feature "add time to a game" do
   end
 
   context "an active game exists" do
+    before do
+      Game.create(chat_id: fake_chat_id, required_players: 5)
+    end
+
     scenario "new player joins game, a new player is created" do
-      message = Telegram::Bot::Types::Message.new(message_params('/add_time     06:00 '))
-      game = Game.create(chat_id: fake_chat_id, required_players: 5)
+      message = Telegram::Bot::Types::Message.new(message_params('/set_time     06:00 '))
+
+      pickup_bot.run(message)
+
+      expect(a_request(:post, "https://api.telegram.org/botfake-token/sendMessage").
+              with(body: {
+                "chat_id" => "123",
+                "text" => I18n.t(
+                  "bot.time",
+                  username: user_params[:username],
+                  time: "06:00"
+                )
+              }
+            )).to have_been_made.times(1)
+      expect(Game.last.time).to eq "06:00"
+    end
+
+    scenario "new player joins game, a new player is created" do
+      message = Telegram::Bot::Types::Message.new(message_params('/set_time next week'))
 
       pickup_bot.run(message)
 

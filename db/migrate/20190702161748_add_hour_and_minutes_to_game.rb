@@ -1,6 +1,5 @@
 class AddHourAndMinutesToGame < ActiveRecord::Migration
   def change
-    add_column :games, :time, :string
-    add_column :games, :date, :string
+    add_column :games, :datetime, :datetime
   end
 end
