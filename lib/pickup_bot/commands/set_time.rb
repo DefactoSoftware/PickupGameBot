@@ -17,7 +17,7 @@ module PickupBot::Commands
       if current_game.update(datetime: datetime)
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t('bot.date', date: datetime)
+          text: I18n.t('bot.date', date: I18n.l(datetime, format: :long))
         )
       end
     end

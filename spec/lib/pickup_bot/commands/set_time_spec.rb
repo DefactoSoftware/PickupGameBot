@@ -45,12 +45,12 @@ feature 'sit time to a game' do
       expect(a_request(:post, 'https://api.telegram.org/botfake-token/sendMessage')
               .with(body: {
                       'chat_id' => '123',
-                      'text' => "The date is set to #{next_tuesday} 19:00:00 +0200"
+                      'text' => "The date is set to #{next_tuesday} 19:00"
                     })).to have_been_made.times(1)
     end
 
     scenario 'set the time to 7pm' do
-      date = Date.today.to_s
+      date = Date.today
       message = Telegram::Bot::Types::Message.new(message_params('/set_time 7pm'))
 
       pickup_bot.run(message)
@@ -58,7 +58,7 @@ feature 'sit time to a game' do
       expect(a_request(:post, 'https://api.telegram.org/botfake-token/sendMessage')
               .with(body: {
                       'chat_id' => '123',
-                      'text' => "The date is set to #{date} 19:00:00 +0200"
+                      'text' => "The date is set to #{output_date(date)} 19:00"
                     })).to have_been_made.times(1)
     end
 
@@ -67,7 +67,11 @@ feature 'sit time to a game' do
 
       (1..7).find { |t| (today + t).tuesday? }
             .then { |days| today + days }
-            .then(&:to_s)
+            .then { |date| output_date(date) }
+    end
+
+    def output_date(date)
+      "#{Date::MONTHNAMES[date.month]} #{date.mday}, #{date.year}"
     end
   end
 end
