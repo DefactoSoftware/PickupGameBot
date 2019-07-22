@@ -62,16 +62,34 @@ feature 'sit time to a game' do
                     })).to have_been_made.times(1)
     end
 
-    def next_tuesday
-      today = Date.today
+    scenario 'return a message when the date could not be formatted right' do
+      message = Telegram::Bot::Types::Message.new(message_params('/set_time  '))
 
-      (1..7).find { |t| (today + t).tuesday? }
-            .then { |days| today + days }
-            .then { |date| output_date(date) }
-    end
+      pickup_bot.run(message)
 
-    def output_date(date)
-      "#{Date::MONTHNAMES[date.month]} #{date.mday}, #{date.year}"
+      expect(a_request(:post, 'https://api.telegram.org/botfake-token/sendMessage')
+              .with(body: {
+                      'chat_id' => '123',
+                      'text' => <<~HEREDOC
+                        The chosen time could not be parsed to choose a time use
+                        this command with a selected time, like:
+                        /set_time at 7pm
+                        /set_time next_tuesday
+                        /set_time next thursday at 8pm
+                      HEREDOC
+                    })).to have_been_made.times(1)
     end
+  end
+
+  def next_tuesday
+    today = Date.today
+
+    (1..7).find { |t| (today + t).tuesday? }
+          .then { |days| today + days }
+          .then { |date| output_date(date) }
+  end
+
+  def output_date(date)
+    "#{Date::MONTHNAMES[date.month]} #{date.mday}, #{date.year}"
   end
 end

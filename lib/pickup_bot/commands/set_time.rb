@@ -14,10 +14,15 @@ module PickupBot::Commands
     def run
       return no_game_message(message) unless game_exists?
 
-      if current_game.update(datetime: datetime)
+      if datetime && current_game.update(datetime: datetime)
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
           text: I18n.t('bot.date', date: I18n.l(datetime, format: :long))
+        )
+      else
+        telegram_bot.api.send_message(
+          chat_id: message.chat.id,
+          text: I18n.t('bot.no_time')
         )
       end
     end
