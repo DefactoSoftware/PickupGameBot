@@ -62,13 +62,12 @@ feature 'sit time to a game' do
                     })).to have_been_made.times(1)
     end
 
-
     def next_tuesday
-       Date.today
-         .then { |today| (1..7).find { |t| (today + t).tuesday? } }
-         .then { |days| today + days }
-         .then { |next_tuesday| next_tuesday.to_s }
+      today = Date.today
 
+      (1..7).find { |t| (today + t).tuesday? }
+            .then { |days| today + days }
+            .then(&:to_s)
     end
   end
 end
