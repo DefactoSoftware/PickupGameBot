@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module PickupBot::Commands
   class SetTime
     def self.run(telegram_bot, message)
@@ -10,16 +12,12 @@ module PickupBot::Commands
     end
 
     def run
-      if game_exists? && current_game.update(datetime: datetime)
-          telegram_bot.api.send_message(
-            chat_id: message.chat.id,
-            text: I18n.t("bot.date")
-          )
-        end
-      else
+      return no_game_message unless game_exists?
+
+      if current_game.update(datetime: datetime)
         telegram_bot.api.send_message(
           chat_id: message.chat.id,
-          text: I18n.t("bot.no_game", username: username)
+          text: I18n.t('bot.date', date: datetime)
         )
       end
     end
@@ -27,6 +25,13 @@ module PickupBot::Commands
     private
 
     attr_reader :telegram_bot, :message
+
+    def no_game_message(_message)
+      telegram_bot.api.send_message(
+        chat_id: @message.chat.id,
+        text: I18n.t('bot.no_game', username: username)
+      )
+    end
 
     def game_exists?
       !!current_game
@@ -40,7 +45,7 @@ module PickupBot::Commands
       if current_game.required_players > 0
         "#{current_game.players.count} / #{current_game.required_players}"
       else
-        "#{current_game.players.count}"
+        current_game.players.count.to_s
       end
     end
 
@@ -49,13 +54,13 @@ module PickupBot::Commands
     end
 
     def game_date?
-       current_game.blank?
+      current_game.blank?
     end
 
     def datetime
-      @message.text
-        .then { |x| x.split(" ", 2).last.strip }
-        .then { |x| Chronic.parse(x) }
+      @datetime ||= @message.text
+                            .then { |x| x.split(' ', 2).last.strip }
+                            .then { |x| Chronic.parse(x) }
     end
   end
 end
