@@ -51,8 +51,10 @@ en:
       /create_game to start a new game
       /archive_game to archive the current game
       /leave to leave a game that you joined
+      /set_time to add a time to the current game
     whatever: "Whatever, @%{username}"
     no_game: "There's no active game, @%{username}"
+    date: "The date is set to %{date}"
     game_created: |
       Game has been created, @%{username}
       You can join this game with /join
@@ -61,6 +63,13 @@ en:
       The current game has been archived.
       Type /create_game to create a new game. You can specify the required
       number of players: */create_game 8*.
+
+    no_time: |
+      The chosen time could not be parsed to choose a time use
+      this command with a selected time, like:
+      /set_time at 7pm
+      /set_time next_tuesday
+      /set_time next thursday at 8pm
 
     game_status: "There's [a game](%{game_url}) with *%{players} players*. Type /join to *join*."
     joined_game: "@%{username} joined the game. There are now %{players} players."

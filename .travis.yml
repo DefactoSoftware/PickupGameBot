@@ -1,7 +1,15 @@
 rvm:
-- 2.5.1
+- 2.6.0
 bundler_args: "--without debug development"
 cache: bundler
+addons:
+  apt:
+    sources:
+      - ubuntu-sdk-team
+    packages:
+      - libqt5webkit5-dev
+      - qtdeclarative5-dev
+    chrome: stable
 before_script:
 - export SECRET_KEY_BASE="$(bundle exec rake secret)"
 - cp .sample.env .env
@@ -9,5 +17,12 @@ before_script:
 - bundle exec rake db:create
 - bundle exec rake db:migrate
 - export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-env: SECRET_KEY_BASE="$(bundle exec rake secret)"
+env:
+  global:
+    - QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+    - SECRET_KEY_BASE="$(bundle exec rake secret)"
+services:
+  - postgresql
+  - xvfb
+script: bundle exec rake
+
