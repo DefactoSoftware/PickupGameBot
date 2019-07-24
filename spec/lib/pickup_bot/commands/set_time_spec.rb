@@ -73,8 +73,8 @@ feature 'sit time to a game' do
                       'text' => <<~HEREDOC
                         The chosen time could not be parsed to choose a time use
                         this command with a selected time, like:
-                        /set_time at 7pm
-                        /set_time next_tuesday
+                        /set_time 7pm
+                        /set_time next tuesday
                         /set_time next thursday at 8pm
                       HEREDOC
                     })).to have_been_made.times(1)
