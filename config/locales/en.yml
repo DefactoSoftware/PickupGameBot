@@ -67,7 +67,7 @@ en:
     no_time: |
       The chosen time could not be parsed to choose a time use
       this command with a selected time, like:
-      /set_time at 7pm
+      /set_time 7pm
       /set_time next tuesday
       /set_time next thursday at 8pm
 
