@@ -83,7 +83,7 @@ feature 'set time ' do
 
   def next_tuesday
     today = Date.today
-    return output_date(today) if today.tuesday
+    return output_date(today) if today.tuesday?
 
     (1..7).find { |t| (today + t).tuesday? }
           .then { |days| today + days }
@@ -91,6 +91,6 @@ feature 'set time ' do
   end
 
   def output_date(date)
-    "#{Date::MONTHNAMES[date.month]} #{date.mday}, #{date.year}"
+    "#{Date::MONTHNAMES[date.month]} #{format('%02d', date.mday)}, #{date.year}"
   end
 end
