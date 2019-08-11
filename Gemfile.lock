@@ -142,7 +142,7 @@ GEM
       bourbon (>= 4.0)
       sass (>= 3.3)
     newrelic_rpm (4.2.0.334)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     normalize-rails (3.0.3)
     pg (0.20.0)
