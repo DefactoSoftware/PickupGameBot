@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'telegram/bot'
 require 'pickup_bot'
 
-feature 'sit time to a game' do
+feature 'set time ' do
   let(:bot) { Telegram::Bot::Client.new('fake-token') }
   let(:pickup_bot) { PickupBot.new(bot) }
   let(:telegram_user) { Telegram::Bot::Types::User.new(user_params) }
@@ -15,7 +15,7 @@ feature 'sit time to a game' do
     stub_request(:any, /api.telegram.org/).to_return(status: 200, body: '[]', headers: {})
   end
 
-  context 'no game currently exists' do
+  context 'when no game currently exists' do
     scenario 'player tries to add a time' do
       message = Telegram::Bot::Types::Message.new(message_params('/set_time 06:00'))
 
@@ -32,7 +32,7 @@ feature 'sit time to a game' do
     end
   end
 
-  context 'an active game exists' do
+  context 'when an active game exists' do
     before do
       Game.create(chat_id: fake_chat_id, required_players: 5)
     end
@@ -83,6 +83,7 @@ feature 'sit time to a game' do
 
   def next_tuesday
     today = Date.today
+    return output_date(today) if today.tuesday?
 
     (1..7).find { |t| (today + t).tuesday? }
           .then { |days| today + days }
@@ -90,6 +91,6 @@ feature 'sit time to a game' do
   end
 
   def output_date(date)
-    "#{Date::MONTHNAMES[date.month]} #{date.mday}, #{date.year}"
+    "#{Date::MONTHNAMES[date.month]} #{format('%02d', date.mday)}, #{date.year}"
   end
 end
