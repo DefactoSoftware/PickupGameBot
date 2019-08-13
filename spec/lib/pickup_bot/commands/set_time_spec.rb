@@ -83,7 +83,6 @@ feature 'set time ' do
 
   def next_tuesday
     today = Date.today
-    return output_date(today) if today.tuesday?
 
     (1..7).find { |t| (today + t).tuesday? }
           .then { |days| today + days }
