@@ -105,8 +105,11 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
-    faraday (0.15.4)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday-net_http (1.0.1)
     flutie (2.0.0)
     formulaic (0.4.1)
       activesupport
@@ -214,6 +217,7 @@ GEM
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
+    ruby2_keywords (0.0.4)
     safe_yaml (1.0.5)
     sass (3.4.24)
     sass-rails (5.0.6)
@@ -242,7 +246,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    telegram-bot-ruby (0.11.0)
+    telegram-bot-ruby (0.15.0)
       faraday
       inflecto
       virtus
